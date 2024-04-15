@@ -31,13 +31,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # 或你项目所需的其他版本
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build  # 确保这是你的构建脚本，它应该输出到 'dist' 或类似的目录
+    
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: './dist'  # 确保这里是你的构建输出目录
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
