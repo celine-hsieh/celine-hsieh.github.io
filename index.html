@@ -16,6 +16,7 @@
             const locationButton = document.querySelector("#location-button");
             const githubButton = document.querySelector("#github-button");
             const text = document.querySelector("#text");
+            const clickButton = document.querySelector("#click-button");
 
             profileButton.setAttribute("visible", true);
             setTimeout(() => {
@@ -34,30 +35,36 @@
             let currentTab = '';
             webButton.addEventListener('click', function (evt) {
                 text.setAttribute("value", "celinehsieh.co");
+                clickButton.setAttribute("visible", true);
                 currentTab = 'web';
             });
             emailButton.addEventListener('click', function (evt) {
                 text.setAttribute("value", "mail: celinehsieh68@gmail.com");
+                clickButton.setAttribute("visible", true);
                 currentTab = 'email';
             });
             profileButton.addEventListener('click', function (evt) {
                 text.setAttribute("value", "@celinehsieh for more!");
+                clickButton.setAttribute("visible", true);
                 currentTab = 'profile';
             });
             locationButton.addEventListener('click', function (evt) {
                 // console.log("loc");
                 text.setAttribute("value", "linkedin: @celinehsieh68");
+                clickButton.setAttribute("visible", true);
                 currentTab = 'linkedin';
             });
             githubButton.addEventListener('click', function (evt) {
                 // console.log("loc");
                 text.setAttribute("value", "github: @celine-hsieh");
+                clickButton.setAttribute("visible", true);
                 currentTab = 'github';
             });
 
             text.addEventListener('click', function (evt) {
                 if (currentTab === 'web') {
                     window.location.href = "https://celinehsieh.co";
+
                 } else if (currentTab === 'linkedin') {
                     window.location.href = "https://linkedin.com/in/celinehsieh68";
                 } else if (currentTab === 'github') {
@@ -127,7 +134,9 @@
             let scale = 0.01; // Start with a scale of 1 (original size)
             const id = setInterval(() => {
                 z += 0.008;
-                scale += 0.01; // Increment the scale by a certain amount each frame
+                if (scale <= 0.65) {
+                    scale += 0.01; // Increment the scale by a certain amount each frame
+                }
 
                 if (z >= 0.3) {
                     clearInterval(id);
@@ -280,6 +289,7 @@
                 <img id="icon-play" src="./examples/image-tracking/assets/card-example/icons/play.png" />
                 <img id="icon-left" src="./examples/image-tracking/assets/card-example/icons/left.png" />
                 <img id="icon-right" src="./examples/image-tracking/assets/card-example/icons/right.png" />
+                <img id="icon-click" src="./examples/image-tracking/assets/card-example/icons/click.png" />
                 <img id="paintandquest-preview"
                     src="./examples/image-tracking/assets/card-example/portfolio/01_UrbanSight.png" />
                 <video id="paintandquest-video-mp4" autoplay="false" loop="true"
@@ -360,11 +370,16 @@
 
                 <!-- <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.8 0.8 0.8" src="#avatarModel"
                     animation-mixer="clip: SK_DLC_Hazardbot.RIGAction; loop: repeat; timeScale: 1"></a-gltf-model> -->
+
                 <a-entity gltf-model="#avatarModel" id="avatar" rotation="0 0 0" position="0 -0.25 0"
-                    scale="0.5 0.5 0.5" src="#avatarModel" animation-mixer></a-entity>
+                    scale="0.1 0.1 0.1" src="#avatarModel" animation-mixer></a-entity>
 
                 <a-text id="text" class="clickable" value="_" color="black" align="center" width="2" position="0 -0.7 0"
                     side="double" geometry="primitive:plane; height: 0.1; width: 2;" material="opacity: 0.5"></a-text>
+
+                <a-image visible=false id="click-button" class="clickable" src="#icon-click" position="0.52 -0.75 0"
+                    height="0.2" width="0.12"
+                    animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
             </a-entity>
         </a-scene>
     </div>
