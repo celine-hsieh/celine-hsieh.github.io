@@ -1,0 +1,11 @@
+Model Information:
+* title:	FNAF - Security Breach - Wet Floor Bot
+* source:	https://sketchfab.com/3d-models/fnaf-security-breach-wet-floor-bot-59115a82905e478a96e91a1a46b69f89
+* author:	ScrinnodStudios (https://sketchfab.com/scrinnodstudios)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "FNAF - Security Breach - Wet Floor Bot" (https://sketchfab.com/3d-models/fnaf-security-breach-wet-floor-bot-59115a82905e478a96e91a1a46b69f89) by ScrinnodStudios (https://sketchfab.com/scrinnodstudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

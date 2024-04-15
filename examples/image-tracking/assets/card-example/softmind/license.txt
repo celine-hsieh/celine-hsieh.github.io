@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wetfloor Bot Riged
+* source:	https://sketchfab.com/3d-models/wetfloor-bot-riged-76cbb0f0f05d4d3cb62045f97a9d10b9
+* author:	jakss (https://sketchfab.com/jakss)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wetfloor Bot Riged" (https://sketchfab.com/3d-models/wetfloor-bot-riged-76cbb0f0f05d4d3cb62045f97a9d10b9) by jakss (https://sketchfab.com/jakss) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
