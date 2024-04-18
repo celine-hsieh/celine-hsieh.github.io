@@ -108,16 +108,50 @@
                     });
 
                     paintandquestPreviewButton.addEventListener('click', () => {
+                        // const mp4Video = document.querySelector("#paintandquest-video-mp4");
+                        // const webmVideo = document.querySelector("#paintandquest-video-webm");
+                        // let mp4Video = "#paintandquest-video-mp4";
+                        // let webmVideo = "#paintandquest-video-webm";
+                        // let format = "#paintandquest-video-mp4"
+                        // const Video = document.querySelector(format);
+
                         paintandquestPreviewButton.setAttribute("visible", false);
-                        const testVideo = document.createElement("video");
+                        const testVideo = document.createElement("videoP");
                         const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
-                        if (canplayWebm == "") {
-                            document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
-                            document.querySelector("#paintandquest-video-mp4").play();
-                        } else {
-                            document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
+
+                        // const videoToPlay = document.querySelector("#paintandquest-video-link");
+
+                        // if (canplayWebm == "") {
+                        //     // format = "#paintandquest-video-mp4";
+                        //     // videoToPlay.setAttribute("src", format);
+                        //     document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
+                        //     document.querySelector("#paintandquest-video-mp4").play();
+
+                        //     if (document.querySelector("#paintandquest-video-mp4").paused || document.querySelector("#paintandquest-video-mp4").ended) {
+                        //         document.querySelector("#paintandquest-video-mp4").play();
+                        //     } else {
+                        //         document.querySelector("#paintandquest-video-mp4").pause();
+                        //     }
+
+                        // } else {
+                        // format = "#paintandquest-video-webm";
+                        // videoToPlay.setAttribute("src", format);
+                        document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
+                        document.querySelector("#paintandquest-video-webm").play();
+
+                        if (document.querySelector("#paintandquest-video-webm").paused || document.querySelector("#paintandquest-video-webm").ended) {
                             document.querySelector("#paintandquest-video-webm").play();
+                        } else {
+                            document.querySelector("#paintandquest-video-webm").pause();
                         }
+                        // }
+
+                        // Toggle play and pause based on current state of the video
+                        // if (Video.paused || Video.ended) {
+                        //     Video.play();
+                        // } else {
+                        //     Video.pause();
+                        // }
                     });
 
                     setTimeout(() => {
@@ -173,7 +207,60 @@
 
     <style>
         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            /* Added for absolute positioning of buttons */
+        }
+
+        /* Style for the top bar containing buttons */
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            /* Distribute space between buttons */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Rest of the styles... */
+
+        .button {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #ddd;
+            color: #333;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            /* Changed to inline-block for inline display */
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 20px;
+            /* Adjusted for rounded edges */
+            transition: all 0.3s ease;
+            margin: 10 0;
+            /* Removed margin for top bar buttons */
+            width: 130px;
+            /* Fixed width for equal length */
+        }
+
+        .button:hover {
+            background-color: #f9f9f9;
+        }
+
+        .button:active {
+            background-color: #efefef;
         }
 
         .example-container {
@@ -267,6 +354,11 @@
 </head>
 
 <body>
+    <div class="top-bar">
+        <button id="connect" class="button">Personal Info</button>
+        <button id="ar-page" class="button">Enable AR</button>
+    </div>
+
     <div class="example-container">
         <div id="example-scanning-overlay" class="hidden">
             <div class="inner">
@@ -275,6 +367,7 @@
             </div>
         </div>
 
+        <!-- mindar-image="imageTargetSrc: ./examples/image-tracking/assets/card-example/card.mind; showStats: false; uiScanning: #example-scanning-overlay;" -->
         <a-scene
             mindar-image="imageTargetSrc: ./examples/image-tracking/assets/card-example/card.mind; showStats: false; uiScanning: #example-scanning-overlay;"
             embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
@@ -292,10 +385,10 @@
                 <img id="icon-click" src="./examples/image-tracking/assets/card-example/icons/click.png" />
                 <img id="paintandquest-preview"
                     src="./examples/image-tracking/assets/card-example/portfolio/01_UrbanSight.png" />
-                <video id="paintandquest-video-mp4" autoplay="false" loop="true"
-                    src="./examples/image-tracking/assets/card-example/portfolio/paintandquest.mp4"></video>
-                <video id="paintandquest-video-webm" autoplay="false" loop="true"
-                    src="./examples/image-tracking/assets/card-example/portfolio/paintandquest.webm"></video>
+                <!-- <video id="paintandquest-video-mp4" autoplay="false" loop="false"
+                    src="./examples/image-tracking/assets/card-example/portfolio/UrbanSight.mp4"></video> -->
+                <video id="paintandquest-video-webm" autoplay="false" loop="false"
+                    src="./examples/image-tracking/assets/card-example/portfolio/UrbanSight.webm"></video>
                 <img id="coffeemachine-preview"
                     src="./examples/image-tracking/assets/card-example/portfolio/coffeemachine-preview.png" />
                 <img id="peak-preview" src="./examples/image-tracking/assets/card-example/portfolio/peak-preview.png" />
@@ -310,20 +403,19 @@
                 <a-asset-item id="avatarModel"
                     src="./examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
 
-                <!-- src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item> -->
-
 
             </a-assets>
 
-            <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" fov="80"
-                near="0.1" raycaster="far: 100000; objects: .clickable">
+            <a-camera id="ar-camera" position="0 0 0" look-controls="enabled: false"
+                cursor="fuse: false; rayOrigin: mouse;" fov="80" near="0.1"
+                raycaster="far: 100000; objects: .clickable">
             </a-camera>
 
             <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
                 <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
 
                 <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
-                    <a-text value="Portfolio" color="black" align="center" width="2" position="0 1.5 0"></a-text>
+                    <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0"></a-text>
                     <a-entity id="portfolio-item0">
                         <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552"
                             position="0 0 0"></a-video>
@@ -352,7 +444,8 @@
                     height="0.25" width="0.25"
                     animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
 
-                <a-image visible=false id="web-button" class="clickable" src="#icon-web" position="-0.25 -0.5 0" height="0.25" width="0.25"
+                <a-image visible=false id="web-button" class="clickable" src="#icon-web" position="-0.25 -0.5 0"
+                    height="0.25" width="0.25"
                     animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"></a-image>
 
                 <a-image visible=false id="email-button" class="clickable" src="#icon-email" position="0 -0.5 0"
@@ -382,6 +475,22 @@
             </a-entity>
         </a-scene>
     </div>
+    <script>
+        // 个人信息页面的URL
+        var personalInfoURL = './examples/image-tracking/personal_info.html'; // 你需要替换成你的实际URL
+        // AR页面的URL
+        var arPageURL = window.location.href; // 如果是当前页面，直接使用当前页面的URL
+
+        document.getElementById('connect').addEventListener('click', function () {
+            // 切换到个人信息页面
+            window.location.href = personalInfoURL;
+        });
+
+        document.getElementById('ar-page').addEventListener('click', function () {
+            // 切换到AR页面
+            window.location.href = arPageURL;
+        });
+    </script>
 </body>
 
 </html>
