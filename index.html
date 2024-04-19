@@ -80,7 +80,7 @@
             const portfolio = document.querySelector("#portfolio-panel");
             const portfolioLeftButton = document.querySelector("#portfolio-left-button");
             const portfolioRightButton = document.querySelector("#portfolio-right-button");
-            const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
+            // const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
 
             let y = 0;
             let currentItem = 0;
@@ -88,7 +88,7 @@
             portfolio.setAttribute("visible", true);
 
             const showPortfolioItem = (item) => {
-                for (let i = 0; i <= 2; i++) {
+                for (let i = 0; i <= 4; i++) {
                     document.querySelector("#portfolio-item" + i).setAttribute("visible", i === item);
                 }
             }
@@ -99,60 +99,60 @@
                     portfolioLeftButton.setAttribute("visible", true);
                     portfolioRightButton.setAttribute("visible", true);
                     portfolioLeftButton.addEventListener('click', () => {
-                        currentItem = (currentItem + 1) % 3;
+                        currentItem = (currentItem + 1) % 5;
                         showPortfolioItem(currentItem);
                     });
                     portfolioRightButton.addEventListener('click', () => {
-                        currentItem = (currentItem - 1 + 3) % 3;
+                        currentItem = (currentItem - 1 + 5) % 5;
                         showPortfolioItem(currentItem);
                     });
 
-                    paintandquestPreviewButton.addEventListener('click', () => {
-                        // const mp4Video = document.querySelector("#paintandquest-video-mp4");
-                        // const webmVideo = document.querySelector("#paintandquest-video-webm");
-                        // let mp4Video = "#paintandquest-video-mp4";
-                        // let webmVideo = "#paintandquest-video-webm";
-                        // let format = "#paintandquest-video-mp4"
-                        // const Video = document.querySelector(format);
+                    // paintandquestPreviewButton.addEventListener('click', () => {
+                    // const mp4Video = document.querySelector("#paintandquest-video-mp4");
+                    // const webmVideo = document.querySelector("#paintandquest-video-webm");
+                    // let mp4Video = "#paintandquest-video-mp4";
+                    // let webmVideo = "#paintandquest-video-webm";
+                    // let format = "#paintandquest-video-mp4"
+                    // const Video = document.querySelector(format);
 
-                        paintandquestPreviewButton.setAttribute("visible", false);
-                        const testVideo = document.createElement("videoP");
-                        const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
+                    // paintandquestPreviewButton.setAttribute("visible", false);
+                    // const testVideo = document.createElement("videoP");
+                    // const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
 
-                        // const videoToPlay = document.querySelector("#paintandquest-video-link");
+                    // const videoToPlay = document.querySelector("#paintandquest-video-link");
 
-                        // if (canplayWebm == "") {
-                        //     // format = "#paintandquest-video-mp4";
-                        //     // videoToPlay.setAttribute("src", format);
-                        //     document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
-                        //     document.querySelector("#paintandquest-video-mp4").play();
+                    // if (canplayWebm == "") {
+                    //     // format = "#paintandquest-video-mp4";
+                    //     // videoToPlay.setAttribute("src", format);
+                    //     document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
+                    //     document.querySelector("#paintandquest-video-mp4").play();
 
-                        //     if (document.querySelector("#paintandquest-video-mp4").paused || document.querySelector("#paintandquest-video-mp4").ended) {
-                        //         document.querySelector("#paintandquest-video-mp4").play();
-                        //     } else {
-                        //         document.querySelector("#paintandquest-video-mp4").pause();
-                        //     }
+                    //     if (document.querySelector("#paintandquest-video-mp4").paused || document.querySelector("#paintandquest-video-mp4").ended) {
+                    //         document.querySelector("#paintandquest-video-mp4").play();
+                    //     } else {
+                    //         document.querySelector("#paintandquest-video-mp4").pause();
+                    //     }
 
-                        // } else {
-                        // format = "#paintandquest-video-webm";
-                        // videoToPlay.setAttribute("src", format);
-                        document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
-                        document.querySelector("#paintandquest-video-webm").play();
+                    // } else {
+                    // format = "#paintandquest-video-webm";
+                    // videoToPlay.setAttribute("src", format);
+                    // document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
+                    // document.querySelector("#paintandquest-video-webm").play();
 
-                        if (document.querySelector("#paintandquest-video-webm").paused || document.querySelector("#paintandquest-video-webm").ended) {
-                            document.querySelector("#paintandquest-video-webm").play();
-                        } else {
-                            document.querySelector("#paintandquest-video-webm").pause();
-                        }
-                        // }
+                    // if (document.querySelector("#paintandquest-video-webm").paused || document.querySelector("#paintandquest-video-webm").ended) {
+                    //     document.querySelector("#paintandquest-video-webm").play();
+                    // } else {
+                    //     document.querySelector("#paintandquest-video-webm").pause();
+                    // }
+                    // }
 
-                        // Toggle play and pause based on current state of the video
-                        // if (Video.paused || Video.ended) {
-                        //     Video.play();
-                        // } else {
-                        //     Video.pause();
-                        // }
-                    });
+                    // Toggle play and pause based on current state of the video
+                    // if (Video.paused || Video.ended) {
+                    //     Video.play();
+                    // } else {
+                    //     Video.pause();
+                    // }
+                    // });
 
                     setTimeout(() => {
                         done();
@@ -263,6 +263,24 @@
             background-color: #efefef;
         }
 
+        /* Specific style for the 'Enable AR' button */
+        #ar-page {
+            background-color: #818080;
+            /* Light gray background */
+            color: #ffffff;
+            /* Darker text color for contrast */
+        }
+
+        #ar-page:hover {
+            background-color: #818080;
+            /* Slightly darker shade for hover state */
+        }
+
+        #ar-page:active {
+            background-color: #818080;
+            /* Even darker for the active state */
+        }
+
         .example-container {
             overflow: hidden;
             position: absolute;
@@ -350,6 +368,23 @@
                 top: calc(100% - 10px)
             }
         }
+
+        footer {
+            position: fixed;
+            /* Fixed at the bottom */
+            left: 0;
+            bottom: 0;
+            width: 98%;
+            background-color: #f4f4f4;
+            /* Match the body's background color */
+            color: #333;
+            text-align: center;
+            padding: 10px 10px 10px 10px;
+            font-size: 12px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            /* Slight shadow for a "lifted" effect */
+            z-index: 10;
+        }
     </style>
 </head>
 
@@ -389,9 +424,13 @@
                     src="./examples/image-tracking/assets/card-example/portfolio/UrbanSight.mp4"></video> -->
                 <video id="paintandquest-video-webm" autoplay="false" loop="false"
                     src="./examples/image-tracking/assets/card-example/portfolio/UrbanSight.webm"></video>
-                <img id="coffeemachine-preview"
-                    src="./examples/image-tracking/assets/card-example/portfolio/coffeemachine-preview.png" />
-                <img id="peak-preview" src="./examples/image-tracking/assets/card-example/portfolio/peak-preview.png" />
+                <img id="02_CityScope" src="./examples/image-tracking/assets/card-example/portfolio/02_CityScope.png" />
+                <img id="03_SmartMonitoring"
+                    src="./examples/image-tracking/assets/card-example/portfolio/03_SmartMonitoring.png" />
+                <img id="04_CrowdPrediction"
+                    src="./examples/image-tracking/assets/card-example/portfolio/04_CrowdPrediction.png" />
+                <img id="05_NonEuclidianGeometry"
+                    src="./examples/image-tracking/assets/card-example/portfolio/05_NonEuclidianGeometry.png" />
 
                 <!-- <footer style="text-align:center; font-size:small; color:gray;">
                     <p>Model by jakss, available under <a
@@ -417,19 +456,29 @@
                 <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
                     <a-text value="Portfolio" color="black" align="center" width="2" position="0 0.4 0"></a-text>
                     <a-entity id="portfolio-item0">
-                        <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552"
-                            position="0 0 0"></a-video>
+                        <!-- <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552"
+                            position="0 0 0"></a-video> -->
                         <a-image id="paintandquest-preview-button" class="clickable" src="#paintandquest-preview"
                             alpha-test="0.5" position="0 0 0" height="0.552" width="1">
                         </a-image>
                     </a-entity>
                     <a-entity id="portfolio-item1" visible=false>
-                        <a-image class="clickable" src="#coffeemachine-preview" alpha-test="0.5" position="0 0 0"
+                        <a-image class="clickable" src="#05_NonEuclidianGeometry" alpha-test="0.5" position="0 0 0"
                             height="0.552" width="1">
                         </a-image>
                     </a-entity>
                     <a-entity id="portfolio-item2" visible=false>
-                        <a-image class="clickable" src="#peak-preview" alpha-test="0.5" position="0 0 0" height="0.552"
+                        <a-image class="clickable" src="#04_CrowdPrediction" alpha-test="0.5" position="0 0 0"
+                            height="0.552" width="1">
+                        </a-image>
+                    </a-entity>
+                    <a-entity id="portfolio-item3" visible=false>
+                        <a-image class="clickable" src="#03_SmartMonitoring" alpha-test="0.5" position="0 0 0"
+                            height="0.552" width="1">
+                        </a-image>
+                    </a-entity>
+                    <a-entity id="portfolio-item4" visible=false>
+                        <a-image class="clickable" src="#02_CityScope" alpha-test="0.5" position="0 0 0" height="0.552"
                             width="1">
                         </a-image>
                     </a-entity>
@@ -491,6 +540,10 @@
             window.location.href = arPageURL;
         });
     </script>
+    <footer>
+        Due to hardware limitations, the AR feature currently supports only iPhone 15/15 Pro/15 Pro Max devices as well
+        as most Android phones.
+    </footer>
 </body>
 
 </html>
