@@ -13,6 +13,7 @@
       if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
       var light = localStorage.getItem('theme') === 'light';
       if (light) document.documentElement.classList.add('light-mode');
+      document.documentElement.style.colorScheme = light ? 'light' : 'dark';
       var m = document.getElementById('themeColorMeta');
       if (m) m.content = light ? '#EBF0F6' : '#050A14';
     })();

@@ -13,6 +13,7 @@
   --card-bg: rgba(13,25,41,0.8);
   --font: 'Inter', sans-serif;
   --mono: 'JetBrains Mono', monospace;
+  color-scheme: dark;
 }
 
 html {
@@ -23,6 +24,7 @@ html {
 }
 html.light-mode {
   background: #F5F7FA;
+  color-scheme: light;
 }
 html.theme-ready {
   transition: background-color 0.5s ease;
