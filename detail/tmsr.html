@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta name="theme-color" id="themeColorMeta" content="#050A14" />
+  <script>
+    (function(){
+      if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
+      var light = localStorage.getItem('theme') === 'light';
+      if (light) document.documentElement.classList.add('light-mode');
+      var m = document.getElementById('themeColorMeta');
+      if (m) m.content = light ? '#EBF0F6' : '#050A14';
+    })();
+  </script>
 </head>
 <body>
 
