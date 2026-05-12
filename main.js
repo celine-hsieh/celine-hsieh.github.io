@@ -283,11 +283,19 @@ function applyTheme(light) {
     if (iconMoon) iconMoon.style.display = light ? 'none' : '';
     if (iconSun) iconSun.style.display = light ? '' : 'none';
   }
+
+  // Force navbar to correct solid color immediately (bypasses backdrop-filter bleed)
+  // so iOS reads the right color before body transition finishes
+  if (navbar) {
+    navbar.style.background = light ? '#EBF0F6' : '#050A14';
+    setTimeout(() => { navbar.style.background = ''; }, 550);
+  }
+
+  // Update iOS status bar color
   const themeMeta = document.getElementById('themeColorMeta');
   if (themeMeta) {
     const color = light ? '#EBF0F6' : '#050A14';
     themeMeta.setAttribute('content', color);
-    // iOS Safari workaround: remove + re-append forces immediate status bar update
     themeMeta.parentNode.removeChild(themeMeta);
     document.head.appendChild(themeMeta);
   }
