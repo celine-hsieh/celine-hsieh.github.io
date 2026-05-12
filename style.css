@@ -655,6 +655,7 @@ footer {
   #navbar { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .pub-abstract { display: none; }
   .hero-cta { flex-direction: column; }
   .research-grid { grid-template-columns: repeat(2, 1fr); }
   .exp-edu-layout { grid-template-columns: 1fr !important; }
