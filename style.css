@@ -41,8 +41,8 @@ body.light-mode {
   --bg3: #E2E5EB;
   --text: #0D1929;
   --text-muted: #4A5568;
-  --border: rgba(0,150,180,0.18);
-  --card-bg: rgba(255,255,255,0.85);
+  --border: rgba(0,100,150,0.30);
+  --card-bg: rgba(255,255,255,0.92);
   --accent: #007AB8;
   --accent2: #5B46D6;
 }
