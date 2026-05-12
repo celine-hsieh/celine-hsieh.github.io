@@ -674,7 +674,7 @@ footer {
   .about-grid { grid-template-columns: 1fr; }
   .hero-badges { gap: 0.4rem; }
   .badge { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
-  .hero-sub { padding: 0 1.5rem; }
+  .hero-sub { padding: 0 0.5rem; font-size: 0.85rem; white-space: nowrap; }
   .container { padding: 0 1.25rem; }
   section { padding: 4rem 0; }
   .about-photo-wrap { display: none; }
