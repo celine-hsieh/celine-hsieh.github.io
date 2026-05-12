@@ -657,7 +657,7 @@ footer {
   .nav-hamburger { display: flex; }
   .pub-abstract { display: none; }
   .hero-cta { flex-direction: column; }
-  .research-grid { grid-template-columns: repeat(2, 1fr); }
+  .research-grid { grid-template-columns: 1fr; }
   .exp-edu-layout { grid-template-columns: 1fr !important; }
   .contact-grid { grid-template-columns: 1fr; }
   .about-stats-row { grid-template-columns: repeat(2, 1fr); }
