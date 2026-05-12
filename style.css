@@ -266,7 +266,8 @@ section:nth-child(even) { background: var(--bg2); }
 
 /* ===== RESEARCH ===== */
 .research-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+  max-width: 100%;
 }
 .research-card {
   background: var(--card-bg); border: 1px solid var(--border);
@@ -568,6 +569,7 @@ footer {
   .nav-links { display: none; }
   .hero-cta { flex-direction: column; }
   .research-grid { grid-template-columns: 1fr; }
+  .exp-edu-layout { grid-template-columns: 1fr !important; }
   .contact-grid { grid-template-columns: 1fr; }
   .about-stats-row { grid-template-columns: repeat(2, 1fr); }
   .exp-edu-layout { grid-template-columns: 1fr; }

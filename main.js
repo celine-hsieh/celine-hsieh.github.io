@@ -68,7 +68,7 @@
     size: 0.15,
     vertexColors: true,
     transparent: true,
-    opacity: 0.75,
+    opacity: 0.45,
     sizeAttenuation: true,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
@@ -102,7 +102,7 @@
   // --- Bounding Boxes (3D objects) ---
   function makeBBox(w, h, d, color, x, y, z) {
     const geo = new THREE.EdgesGeometry(new THREE.BoxGeometry(w, h, d));
-    const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending });
+    const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.18, blending: THREE.AdditiveBlending });
     const mesh = new THREE.LineSegments(geo, mat);
     mesh.position.set(x, y, z);
     scene.add(mesh);
