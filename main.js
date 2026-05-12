@@ -284,7 +284,13 @@ function applyTheme(light) {
     if (iconSun) iconSun.style.display = light ? '' : 'none';
   }
   const themeMeta = document.getElementById('themeColorMeta');
-  if (themeMeta) themeMeta.content = light ? '#EBF0F6' : '#050A14';
+  if (themeMeta) {
+    const color = light ? '#EBF0F6' : '#050A14';
+    themeMeta.setAttribute('content', color);
+    // iOS Safari workaround: remove + re-append forces immediate status bar update
+    themeMeta.parentNode.removeChild(themeMeta);
+    document.head.appendChild(themeMeta);
+  }
   localStorage.setItem('theme', light ? 'light' : 'dark');
 }
 
