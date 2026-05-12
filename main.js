@@ -138,8 +138,8 @@
     const t = clock.getElapsedTime();
 
     // Smooth mouse follow
-    targetX += (mouseX - targetX) * 0.04;
-    targetY += (mouseY - targetY) * 0.04;
+    targetX += (mouseX - targetX) * 0.12;
+    targetY += (mouseY - targetY) * 0.12;
 
     points.rotation.y = t * 0.04 + targetX * 0.3;
     points.rotation.x = targetY * 0.15;
