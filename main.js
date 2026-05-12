@@ -163,15 +163,9 @@
 
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.getElementById('navbar');
-function updateNavbarBg() {
-  const light = document.body.classList.contains('light-mode');
-  if (window.scrollY > 60) {
-    navbar.style.background = light ? 'rgba(232,235,242,0.99)' : 'rgba(5,10,20,0.97)';
-  } else {
-    navbar.style.background = light ? 'rgba(235,238,244,0.97)' : 'rgba(5,10,20,0.85)';
-  }
-}
-window.addEventListener('scroll', updateNavbarBg);
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
 
 // ===== SCROLL REVEAL =====
 const revealEls = document.querySelectorAll(
@@ -289,7 +283,6 @@ function applyTheme(light) {
     if (iconSun) iconSun.style.display = light ? '' : 'none';
   }
   localStorage.setItem('theme', light ? 'light' : 'dark');
-  if (typeof updateNavbarBg === 'function') updateNavbarBg();
 }
 
 // Load saved preference

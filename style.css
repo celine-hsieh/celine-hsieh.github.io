@@ -46,10 +46,10 @@ body.light-mode {
   --accent: #007AB8;
   --accent2: #5B46D6;
 }
-body.light-mode #navbar {
-  background: rgba(235,238,244,0.97);
-  border-bottom-color: rgba(0,120,180,0.25);
-}
+/* Navbar scroll state */
+#navbar.scrolled { background: rgba(5,10,20,0.97); }
+body.light-mode #navbar { background: rgba(235,238,244,0.97); border-bottom-color: rgba(0,120,180,0.25); }
+body.light-mode #navbar.scrolled { background: rgba(228,232,240,0.99); }
 body.light-mode .nav-logo { color: var(--text); }
 body.light-mode .nav-links a { color: var(--text-muted); }
 body.light-mode .nav-hamburger span { background: var(--text-muted); }
@@ -275,7 +275,7 @@ section:nth-child(even) { background: var(--bg2); }
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem;
 }
-.about-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; }
+.about-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; text-align: justify; }
 .about-text strong { color: var(--text); }
 .about-text em { color: var(--accent); font-style: normal; }
 .about-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
