@@ -319,3 +319,12 @@ if (themeToggle) {
     applyTheme(!document.body.classList.contains('light-mode'));
   });
 }
+
+// ===== MORE PROJECTS BUTTON =====
+const projMoreBtn = document.getElementById('projMoreBtn');
+if (projMoreBtn) {
+  projMoreBtn.addEventListener('click', () => {
+    document.querySelectorAll('.proj-extra').forEach(el => el.classList.add('visible'));
+    projMoreBtn.classList.add('hidden');
+  });
+}

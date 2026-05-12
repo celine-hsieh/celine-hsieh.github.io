@@ -569,6 +569,21 @@ section:nth-child(even) { background: var(--bg2); }
 .proj-card-info p { color: var(--text-muted); font-size: 0.845rem; line-height: 1.7; }
 .proj-authors { font-size: 0.75rem !important; opacity: 0.7; margin-top: 0.2rem; }
 
+/* Extra projects hidden by default */
+.proj-extra { display: none !important; }
+.proj-extra.visible { display: flex !important; }
+
+.proj-more-row { display: flex; justify-content: center; margin-top: 2.5rem; }
+.proj-more-btn {
+  font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em;
+  color: var(--accent); background: transparent;
+  border: 1px solid rgba(0,212,255,0.35); border-radius: 2rem;
+  padding: 0.55rem 1.75rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.proj-more-btn:hover { background: rgba(0,212,255,0.08); border-color: var(--accent); }
+.proj-more-btn.hidden { display: none; }
+
 /* ===== AWARDS ===== */
 .awards-list { display: flex; flex-direction: column; gap: 0; }
 .award-item {
