@@ -167,14 +167,14 @@ nav .nav-logo {
 /* ===== PAPER LINK ===== */
 .paper-link {
   display: inline-flex; align-items: center; gap: 0.35rem;
-  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
-  color: var(--accent); border: 1px solid rgba(0,212,255,0.4);
-  background: rgba(0,212,255,0.06);
-  padding: 0.3rem 0.75rem; border-radius: 2rem;
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+  color: #050A14; background: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.35rem 0.9rem; border-radius: 2rem;
   text-decoration: none; letter-spacing: 0.04em;
   transition: all 0.2s;
 }
-.paper-link:hover { background: rgba(0,212,255,0.14); border-color: var(--accent); }
+.paper-link:hover { opacity: 0.85; }
 
 /* ===== BIBTEX ===== */
 .bibtex-wrap {
