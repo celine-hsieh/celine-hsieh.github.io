@@ -57,6 +57,9 @@ nav .nav-logo {
   gap: 4rem;
   align-items: start;
 }
+.detail-layout > *:first-child {
+  min-width: 0; /* prevent pre/code from blowing out the grid column */
+}
 
 /* ===== MAIN COLUMN ===== */
 .detail-thumb {

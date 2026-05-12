@@ -45,7 +45,9 @@ body.theme-ready {
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
 /* ===== LIGHT MODE ===== */
-body.light-mode {
+/* html.light-mode catches inline-script (head) before body exists;
+   body.light-mode catches main.js toggle — both needed */
+html.light-mode, body.light-mode {
   --bg: #F5F7FA;
   --bg2: #ECEEF2;
   --bg3: #E2E5EB;
