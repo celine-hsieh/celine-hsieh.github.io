@@ -291,6 +291,14 @@ function applyTheme(light) {
 // Load saved preference
 applyTheme(localStorage.getItem('theme') === 'light');
 
+// Enable smooth transitions only after first paint (prevents load flash)
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add('theme-ready');
+    document.body.classList.add('theme-ready');
+  });
+});
+
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     applyTheme(!document.body.classList.contains('light-mode'));
