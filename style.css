@@ -271,11 +271,15 @@ section:nth-child(even) { background: var(--bg2); }
 .about-grid {
   display: grid; grid-template-columns: 1fr 320px; gap: 5rem; align-items: start;
 }
+.about-text { width: 100%; }
 .about-text h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem;
 }
-.about-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; text-align: justify; }
+.about-text p {
+  color: var(--text-muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8;
+  text-align: justify; hyphens: auto; overflow-wrap: break-word;
+}
 .about-text strong { color: var(--text); }
 .about-text em { color: var(--accent); font-style: normal; }
 .about-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
