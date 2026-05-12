@@ -252,39 +252,45 @@ const mobileMenu = document.getElementById('mobileMenu');
 const mobileOverlay = document.getElementById('mobileOverlay');
 const mobileClose = document.getElementById('mobileMenuClose');
 
-function openMenu() {
-  mobileMenu.classList.add('open');
-  mobileOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMenu() {
-  mobileMenu.classList.remove('open');
-  mobileOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
+if (hamburger && mobileMenu && mobileOverlay && mobileClose) {
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-hamburger.addEventListener('click', openMenu);
-mobileClose.addEventListener('click', closeMenu);
-mobileOverlay.addEventListener('click', closeMenu);
-document.querySelectorAll('.mobile-link').forEach(a => {
-  a.addEventListener('click', closeMenu);
-});
+  hamburger.addEventListener('click', openMenu);
+  mobileClose.addEventListener('click', closeMenu);
+  mobileOverlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-link').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+}
 
 // ===== THEME TOGGLE =====
 const themeToggle = document.getElementById('themeToggle');
-const iconMoon = themeToggle.querySelector('.icon-moon');
-const iconSun = themeToggle.querySelector('.icon-sun');
 
 function applyTheme(light) {
   document.body.classList.toggle('light-mode', light);
-  iconMoon.style.display = light ? 'none' : '';
-  iconSun.style.display = light ? '' : 'none';
+  if (themeToggle) {
+    const iconMoon = themeToggle.querySelector('.icon-moon');
+    const iconSun = themeToggle.querySelector('.icon-sun');
+    if (iconMoon) iconMoon.style.display = light ? 'none' : '';
+    if (iconSun) iconSun.style.display = light ? '' : 'none';
+  }
   localStorage.setItem('theme', light ? 'light' : 'dark');
 }
 
 // Load saved preference
 applyTheme(localStorage.getItem('theme') === 'light');
 
-themeToggle.addEventListener('click', () => {
-  applyTheme(!document.body.classList.contains('light-mode'));
-});
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    applyTheme(!document.body.classList.contains('light-mode'));
+  });
+}
