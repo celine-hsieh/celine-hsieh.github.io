@@ -197,10 +197,20 @@
         @keyframes move { 0%,100%{ top: 0% } 50%{ top: calc(100% - 3px) } }
         .ar-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            padding: 10px; text-align: center;
-            background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
+            padding: 10px 16px 14px;
+            text-align: center;
+            background: rgba(0,0,0,0.55); backdrop-filter: blur(8px);
             color: rgba(255,255,255,0.5); font-size: 11px; z-index: 100;
+            display: flex; flex-direction: column; gap: 5px;
         }
+        .ar-footer-hint {
+            color: rgba(255,255,255,0.35); font-size: 10.5px;
+        }
+        .ar-footer-hint a {
+            color: #00D4FF; text-decoration: none;
+            border-bottom: 1px solid rgba(0,212,255,0.4);
+        }
+        .ar-footer-hint a:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -294,7 +304,8 @@
     </div>
 
     <div class="ar-footer">
-        Point camera at Celine's card to activate AR &nbsp;·&nbsp; Supported on iPhone 15+ and most Android phones
+        <div>Scan Celine's card to reveal the AR animation &nbsp;·&nbsp; Supported on iPhone 15+ and most modern Android phones</div>
+        <div class="ar-footer-hint">No physical card? Download and print it. <a href="./images/business-card.png" download="CelineHsieh-BusinessCard.png">Here</a></div>
     </div>
 </body>
 </html>
