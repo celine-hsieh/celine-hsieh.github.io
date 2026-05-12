@@ -282,6 +282,8 @@ function applyTheme(light) {
     if (iconMoon) iconMoon.style.display = light ? 'none' : '';
     if (iconSun) iconSun.style.display = light ? '' : 'none';
   }
+  const themeMeta = document.getElementById('themeColorMeta');
+  if (themeMeta) themeMeta.content = light ? '#EBF0F6' : '#050A14';
   localStorage.setItem('theme', light ? 'light' : 'dark');
 }
 

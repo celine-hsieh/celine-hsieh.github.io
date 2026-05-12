@@ -48,8 +48,8 @@ body.light-mode {
 }
 /* Navbar scroll state */
 #navbar.scrolled { background: rgba(5,10,20,0.97); }
-body.light-mode #navbar { background: rgba(235,238,244,0.97); border-bottom-color: rgba(0,120,180,0.25); }
-body.light-mode #navbar.scrolled { background: rgba(228,232,240,0.99); }
+body.light-mode #navbar { background: #EBF0F6; border-bottom-color: rgba(0,120,180,0.25); backdrop-filter: none; }
+body.light-mode #navbar.scrolled { background: #E4E9F2; }
 body.light-mode .nav-logo { color: var(--text); }
 body.light-mode .nav-links a { color: var(--text-muted); }
 body.light-mode .nav-hamburger span { background: var(--text-muted); }
