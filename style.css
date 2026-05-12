@@ -604,7 +604,7 @@ section:nth-child(even) { background: var(--bg2); }
 .contact-header h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
 .contact-header p { color: var(--text-muted); font-size: 1rem; max-width: 540px; }
 .contact-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem;
 }
 .contact-card {
   display: flex; align-items: center; gap: 1rem;
@@ -682,7 +682,7 @@ footer {
   .pub-thumb { height: 120px; min-height: unset; }
 }
 @media (max-width: 900px) {
-  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 600px) {
   #navbar { padding: 1rem 1.5rem; }
