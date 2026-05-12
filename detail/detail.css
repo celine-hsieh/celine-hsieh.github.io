@@ -177,6 +177,11 @@ nav .nav-logo {
 .paper-link:hover { opacity: 0.85; }
 
 /* ===== BIBTEX ===== */
+.bibtex-section {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
 .bibtex-wrap {
   margin-top: 0.5rem;
   position: relative;
