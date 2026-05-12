@@ -46,7 +46,13 @@ body.light-mode {
   --accent: #007AB8;
   --accent2: #5B46D6;
 }
-body.light-mode #navbar { background: rgba(245,247,250,0.92); }
+body.light-mode #navbar {
+  background: rgba(235,238,244,0.97);
+  border-bottom-color: rgba(0,120,180,0.25);
+}
+body.light-mode .nav-logo { color: var(--text); }
+body.light-mode .nav-links a { color: var(--text-muted); }
+body.light-mode .nav-hamburger span { background: var(--text-muted); }
 body.light-mode .hero-tag { background: rgba(0,122,184,0.08); }
 body.light-mode .btn-ghost { background: rgba(0,0,0,0.04); }
 body.light-mode .pub-item, body.light-mode .proj-card-new,
@@ -73,7 +79,7 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
 }
 .nav-links a:hover { color: var(--accent); }
 
-.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.nav-right { display: flex; align-items: center; gap: 2rem; }
 
 /* Theme toggle */
 .theme-toggle {
@@ -346,7 +352,7 @@ section:nth-child(even) { background: var(--bg2); }
 
 /* ===== RESEARCH ===== */
 .research-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
   max-width: 100%;
 }
 .research-card {
@@ -634,6 +640,7 @@ footer {
   .exp-edu-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .pub-item { grid-template-columns: 100px 1fr; }
   .pub-header { flex-direction: column; align-items: flex-start; }
+  .research-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 650px) {
   .projects-grid-new { grid-template-columns: 1fr; }
@@ -649,7 +656,7 @@ footer {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .hero-cta { flex-direction: column; }
-  .research-grid { grid-template-columns: 1fr; }
+  .research-grid { grid-template-columns: repeat(2, 1fr); }
   .exp-edu-layout { grid-template-columns: 1fr !important; }
   .contact-grid { grid-template-columns: 1fr; }
   .about-stats-row { grid-template-columns: repeat(2, 1fr); }

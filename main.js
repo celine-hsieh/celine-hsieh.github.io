@@ -153,6 +153,9 @@
     const fade = Math.max(0, 1 - scrollY / 500);
     renderer.domElement.style.opacity = fade;
 
+    // Particle opacity: brighter in light mode
+    material.opacity = document.body.classList.contains('light-mode') ? 0.75 : 0.45;
+
     renderer.render(scene, camera);
   }
   animate();
