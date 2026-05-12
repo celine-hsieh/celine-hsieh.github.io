@@ -686,6 +686,10 @@ footer {
 }
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: repeat(3, 1fr); }
+  .contact-card {
+    flex-direction: row; align-items: center;
+    text-align: left; gap: 1rem; padding: 1.1rem 1.4rem;
+  }
 }
 @media (max-width: 600px) {
   #navbar { padding: 1rem 1.5rem; }
@@ -696,6 +700,7 @@ footer {
   .research-grid { grid-template-columns: 1fr; }
   .exp-edu-layout { grid-template-columns: 1fr !important; }
   .contact-grid { grid-template-columns: 1fr; }
+  .contact-card { flex-direction: row; align-items: center; text-align: left; gap: 1rem; padding: 1rem 1.2rem; }
   .about-stats-row { grid-template-columns: repeat(2, 1fr); }
   .exp-edu-layout { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
