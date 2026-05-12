@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenSpot · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#publications" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag sigspatial">ACM SIGSPATIAL 2024</span>
+        <span class="detail-cat-tag">Spatial AI</span>
+      </div>
+      <h1 class="detail-title">GreenSpot: Improving Public Transport with GIS-Based AR and Cluster-GCN Recommendation</h1>
+      <p class="detail-authors">Lai, Shih-Yu, <strong>Tzu-Hsin Hsieh</strong>, Sing-Kai Ling, et al.</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/pub-sigspatial2024-fig.png" alt="GreenSpot paper figure" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Abstract</h2>
+          <p>GreenSpot combines GIS-based augmented reality with a Cluster-GCN recommendation model to help commuters discover and choose greener public transport options. The system overlays real-time transit suggestions onto the physical city environment via a mobile AR interface, while the backend models spatial dependencies between bus stops, bike-share stations, and pedestrian flow patterns using graph convolutional networks.</p>
+          <p>Published at ACM SIGSPATIAL 2024, GreenSpot demonstrates how spatial graph learning can be coupled with on-site AR to create actionable, place-aware mobility recommendations.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Contributions</h2>
+          <ul class="detail-list">
+            <li>Cluster-GCN architecture for scalable spatial recommendation over city-scale transit graphs.</li>
+            <li>GIS data pipeline integrating OpenStreetMap, GTFS transit feeds, and weather sensors.</li>
+            <li>Mobile AR interface (iOS / ARKit) that overlays route suggestions at physical bus stops.</li>
+            <li>Field evaluation with commuters in Tainan City, Taiwan.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>Graph CNN</span><span>GIS</span><span>ARKit</span><span>iOS</span>
+            <span>Public Transit</span><span>OpenStreetMap</span>
+            <span>Python</span><span>ACM SIGSPATIAL 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Publication Info</h3>
+          <dl>
+            <dt>Venue</dt><dd>ACM SIGSPATIAL 2024</dd>
+            <dt>Year</dt><dd>2024</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="m3.html" class="related-link">M3 (SIGSPATIAL 2025)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

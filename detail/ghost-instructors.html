@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill-Adaptive Ghost Instructors · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#publications" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag chi">CHI 2026</span>
+        <span class="pub-badge">1st Author · Full Paper</span>
+        <span class="detail-cat-tag">XR / VR</span>
+      </div>
+      <h1 class="detail-title">Skill-Adaptive Ghost Instructors: Enhancing Retention and Reducing Over-Reliance in VR Piano Learning</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong>, Cassandra Michelle Stefanie Visser, Elmar Eisemann, Ricardo Marroquim</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/pub-chi-ghost.png" alt="Ghost Instructors teaser" onerror="this.src='../images/proj-ghost-vr.png'" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Abstract</h2>
+          <p>Ghost-hand guidance is widely used in VR motor-skill learning, but static transparency schemes often lead to over-reliance — learners follow the ghost passively rather than internalizing the skill. We present <em>Skill-Adaptive Ghost Instructors</em>, a VR piano learning system that dynamically adjusts ghost-hand transparency based on the learner's real-time performance.</p>
+          <p>Through a formal user study on Meta Quest 3, we compared a static baseline condition against our skill-adaptive system across measures of note-retention, over-reliance, task load (NASA-TLX), and perceived usefulness. Results show that adaptive guidance significantly reduces over-reliance while maintaining or improving post-practice retention — suggesting that fading assistance tied to performance milestones supports more effective skill internalization.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Contributions</h2>
+          <ul class="detail-list">
+            <li>Designed a skill-adaptive transparency control loop that evaluates per-note accuracy in real time and adjusts ghost opacity accordingly.</li>
+            <li>Implemented full hand-tracking and MIDI-event logging on Meta Quest 3 in Unity / C#.</li>
+            <li>Conducted a within-subjects user study (n=24) with pre/post retention tests, NASA-TLX, and over-reliance metrics.</li>
+            <li>Demonstrated that adaptive guidance reduces passive mirroring behaviour without increasing cognitive workload.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>System Design</h2>
+          <p>The system consists of three layers: (1) a <em>hand-tracking module</em> capturing finger joint positions at 60 Hz via Meta's Hand Tracking SDK, (2) a <em>performance evaluator</em> comparing pressed keys against the target sequence and maintaining a rolling accuracy score, and (3) a <em>ghost renderer</em> that maps accuracy to ghost opacity through a piecewise sigmoid function, providing high visibility when the learner struggles and fading to near-invisible when performance is strong.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>Meta Quest 3</span><span>Unity / C#</span><span>Hand Tracking SDK</span>
+            <span>XR Interaction Toolkit</span><span>MIDI</span><span>NASA-TLX</span>
+            <span>User Study (n=24)</span><span>Adaptive AI</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Publication Info</h3>
+          <dl>
+            <dt>Venue</dt><dd>ACM CHI 2026 — Full Paper</dd>
+            <dt>Status</dt><dd>Accepted</dd>
+            <dt>Role</dt><dd>First Author</dd>
+            <dt>Year</dt><dd>2026</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="urbansight.html" class="related-link">UrbanSight (XR)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

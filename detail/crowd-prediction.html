@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crowd Counting &amp; Prediction · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag" style="background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.4);color:#00D4FF;">Industry Collaboration · 2022</span>
+        <span class="detail-cat-tag">Spatial AI</span>
+      </div>
+      <h1 class="detail-title">Crowd Counting &amp; Prediction: GRU-Based Pedestrian Flow Forecasting for Smart City</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong> — Tainan City Government × Far EasTone Telecom</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/proj-crowd.png" alt="Crowd Prediction Dashboard" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Project Overview</h2>
+          <p>This project was developed in collaboration with Tainan City Government and Far EasTone Telecom as part of a smart-city initiative to improve pedestrian flow management at tourist attractions and transportation hubs. The system combines GRU-based time-series prediction with geospatial analysis to forecast pedestrian density up to 2 hours ahead, visualized through an interactive web dashboard.</p>
+          <p>Telco-derived crowd density data (anonymized mobile signal counts) was fused with weather, calendar, and event data to train the forecasting model, achieving strong results even during irregular holiday and event spikes.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Features</h2>
+          <ul class="detail-list">
+            <li>GRU (Gated Recurrent Unit) sequence model with multi-variate input: crowd density, weather, time features, event flags.</li>
+            <li>Geospatial heatmap overlays on Leaflet.js web dashboard showing predicted density by zone.</li>
+            <li>Real-time ingestion pipeline from Far EasTone's anonymized telecom crowd signals.</li>
+            <li>Achieved MAE below 8% on held-out test data including holiday seasons.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>GRU</span><span>PyTorch</span><span>Time Series</span>
+            <span>Geospatial Analysis</span><span>Leaflet.js</span><span>Flask</span>
+            <span>Smart City</span><span>Python</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Project Info</h3>
+          <dl>
+            <dt>Partners</dt><dd>Tainan City Gov. × Far EasTone</dd>
+            <dt>Year</dt><dd>2022</dd>
+            <dt>Award</dt><dd>🥈 Silver — Tainan Digital Governance Program</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="greenspot.html" class="related-link">GreenSpot (Spatial AI)</a>
+          <a href="m3.html" class="related-link">M3 (Recommendation)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

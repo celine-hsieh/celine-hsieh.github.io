@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tzu-Hsin Hsieh (Celine) · Spatial AI Researcher</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">TH<span class="accent">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="ar.html" class="nav-ar">⬡ AR</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-profile">
+        <img src="./images/profile.jpg" alt="Tzu-Hsin Hsieh" id="hero-avatar" onerror="this.style.display='none';document.getElementById('hero-avatar-fallback').style.display='flex'" />
+        <div id="hero-avatar-fallback" class="hero-avatar-fallback">TH</div>
+      </div>
+      <div class="hero-tag mono">Ph.D. Researcher @ TU Delft</div>
+      <h1>Tzu-Hsin Hsieh<br/><span class="accent">Celine</span></h1>
+      <p class="hero-sub">Spatial AI &nbsp;·&nbsp; Generative 3D &nbsp;·&nbsp; XR Systems</p>
+      <div class="hero-badges">
+        <span class="badge">3D Scene Understanding</span>
+        <span class="badge">VLM Reasoning</span>
+        <span class="badge">XR Hand Tracking</span>
+        <span class="badge">Generative AI</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#publications" class="btn-primary">Publications</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="mono">scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label mono">01 · About</div>
+
+      <!-- Stats row -->
+      <div class="about-stats-row">
+        <div class="stat-card"><div class="stat-num accent">8<span class="stat-plus">+</span></div><div class="stat-label">Publications</div></div>
+        <div class="stat-card"><div class="stat-num accent">5<span class="stat-plus">+</span></div><div class="stat-label">Awards</div></div>
+        <div class="stat-card"><div class="stat-num accent">3</div><div class="stat-label">Countries</div></div>
+        <div class="stat-card"><div class="stat-num accent">7<span class="stat-plus">+</span></div><div class="stat-label">Projects</div></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="about-tabs">
+        <button class="atab active" data-tab="bio">About</button>
+        <button class="atab" data-tab="experience">Experience</button>
+        <button class="atab" data-tab="research">Research Areas</button>
+      </div>
+
+      <!-- Tab: Bio -->
+      <div class="atab-content active" id="tab-bio">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>Ph.D. researcher in <span class="accent">Spatial AI</span>, Generative 3D, and <span class="accent">XR Systems</span></h2>
+            <p>I am a Ph.D. researcher at the <strong>Computer Graphics and Visualization Group, TU Delft</strong>, specializing in spatial AI, generative 3D, and XR systems.</p>
+            <p>My work focuses on building end-to-end research prototypes that combine <em>VLM-based 3D scene understanding</em>, generative AI, computer vision, XR hand tracking, and human-centered XR interfaces for spatial reasoning and content generation.</p>
+            <p>With an interdisciplinary background in Architecture, Computer Science, and Electrical Engineering, I design systems that bridge high-level spatial intelligence with real-time human interaction in physical and virtual environments.</p>
+            <div class="about-links">
+              <a href="mailto:thhsieh@tudelft.nl" class="link-pill">✉ thhsieh@tudelft.nl</a>
+              <a href="https://github.com/celine-hsieh" target="_blank" class="link-pill">⌥ GitHub</a>
+              <a href="https://linkedin.com/in/celinehsieh68" target="_blank" class="link-pill link-pill-li">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://drive.google.com/drive/folders/1emE5Y3f6EMxLD-iNYDgx6ipIINEURow_?usp=sharing" target="_blank" class="link-pill cv-pill">↓ CV</a>
+            </div>
+          </div>
+          <div class="about-edu">
+            <h3 class="side-title">Education</h3>
+            <div class="edu-list">
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-body">
+                  <div class="edu-degree">Ph.D. in Computer Science</div>
+                  <div class="edu-school">Delft University of Technology</div>
+                  <div class="edu-meta mono">Jul 2024 – Present · Delft, Netherlands</div>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-body">
+                  <div class="edu-degree">M.S. in Architecture & Computer Science</div>
+                  <div class="edu-school">National Cheng Kung University</div>
+                  <div class="edu-meta mono">Sep 2021 – Jul 2024 · Tainan, Taiwan</div>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-dot"></div>
+                <div class="edu-body">
+                  <div class="edu-degree">Bachelor of Architecture</div>
+                  <div class="edu-school">National University of Kaohsiung</div>
+                  <div class="edu-meta mono">Sep 2017 – Aug 2021 · Kaohsiung, Taiwan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Experience -->
+      <div class="atab-content" id="tab-experience">
+        <div class="exp-timeline">
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="exp-year mono">2024 – Now</div>
+              <div class="exp-dot active"></div>
+              <div class="exp-line"></div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-role">Ph.D. Researcher</div>
+              <div class="exp-org">Computer Graphics and Visualization Group, TU Delft</div>
+              <div class="exp-loc mono">Delft, The Netherlands</div>
+              <p>Conducting research on spatial AI, generative 3D, and 3D scene understanding for XR-based spatial reasoning and content generation. Developed XR prototypes with hand tracking, real-time interaction logging, adaptive feedback control, and user-study evaluation.</p>
+              <div class="exp-tags"><span>Spatial AI</span><span>Generative 3D</span><span>XR</span><span>User Study</span></div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="exp-year mono">2023</div>
+              <div class="exp-dot"></div>
+              <div class="exp-line"></div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-role">Research Assistant</div>
+              <div class="exp-org">City Science Lab @ Taipei · MIT UROP Program</div>
+              <div class="exp-loc mono">Taipei, Taiwan · Feb – Jun 2023</div>
+              <p>Built an AR iOS application using real-world weather data, AprilTag tracking, and plane detection for spatial model registration.</p>
+              <div class="exp-tags"><span>AR</span><span>iOS</span><span>AprilTag</span><span>MIT</span></div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="exp-year mono">2022–2024</div>
+              <div class="exp-dot"></div>
+              <div class="exp-line"></div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-role">Research Assistant</div>
+              <div class="exp-org">Digital IC Design Lab, National Cheng Kung University</div>
+              <div class="exp-loc mono">Tainan, Taiwan</div>
+              <p>Conducted computer vision research on AI-based image recognition, super-resolution, satellite-image analysis, and deep learning for remote sensing applications.</p>
+              <div class="exp-tags"><span>Computer Vision</span><span>Deep Learning</span><span>Remote Sensing</span></div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-left">
+              <div class="exp-year mono">2021–2024</div>
+              <div class="exp-dot"></div>
+            </div>
+            <div class="exp-body">
+              <div class="exp-role">Research Assistant</div>
+              <div class="exp-org">Interactive Architecture Lab, National Cheng Kung University</div>
+              <div class="exp-loc mono">Tainan, Taiwan</div>
+              <p>Developed mixed reality and digital-twin systems integrating BIM, 3D spatial data, and collaborative interaction workflows.</p>
+              <div class="exp-tags"><span>Mixed Reality</span><span>Digital Twin</span><span>BIM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Research Areas -->
+      <div class="atab-content" id="tab-research">
+        <div class="research-grid">
+          <div class="research-card" data-index="01">
+            <div class="rc-icon"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="3" fill="#00D4FF"/><circle cx="8" cy="12" r="2" fill="#00D4FF" opacity="0.6"/><circle cx="32" cy="10" r="2" fill="#00D4FF" opacity="0.6"/><circle cx="10" cy="30" r="2" fill="#00D4FF" opacity="0.6"/><circle cx="30" cy="28" r="2" fill="#00D4FF" opacity="0.6"/><circle cx="20" cy="6" r="1.5" fill="#7B61FF" opacity="0.7"/><circle cx="34" cy="22" r="1.5" fill="#7B61FF" opacity="0.7"/><circle cx="6" cy="20" r="1.5" fill="#7B61FF" opacity="0.7"/><line x1="20" y1="20" x2="8" y2="12" stroke="#00D4FF" stroke-width="0.5" opacity="0.4"/><line x1="20" y1="20" x2="32" y2="10" stroke="#00D4FF" stroke-width="0.5" opacity="0.4"/><line x1="20" y1="20" x2="10" y2="30" stroke="#00D4FF" stroke-width="0.5" opacity="0.4"/><line x1="20" y1="20" x2="30" y2="28" stroke="#00D4FF" stroke-width="0.5" opacity="0.4"/></svg></div>
+            <h3>Spatial AI</h3>
+            <p>VLM-based 3D scene understanding, spatial grounding, and multimodal reasoning for intelligent spatial interaction.</p>
+            <div class="rc-tags"><span>VLM</span><span>Scene Understanding</span><span>Spatial Reasoning</span></div>
+          </div>
+          <div class="research-card" data-index="02">
+            <div class="rc-icon"><svg viewBox="0 0 40 40" fill="none"><rect x="10" y="10" width="20" height="20" rx="2" stroke="#7B61FF" stroke-width="1.5" fill="none"/><rect x="14" y="14" width="12" height="12" rx="1" fill="#7B61FF" opacity="0.2"/><path d="M20 10 L20 6 M20 34 L20 30 M10 20 L6 20 M34 20 L30 20" stroke="#7B61FF" stroke-width="1" opacity="0.6"/><circle cx="20" cy="20" r="3" fill="#7B61FF"/></svg></div>
+            <h3>Generative 3D</h3>
+            <p>Fit-aware 3D object synthesis and generative adaptation for context-aware spatial content generation.</p>
+            <div class="rc-tags"><span>PyTorch3D</span><span>Geometry Optimization</span><span>Generative AI</span></div>
+          </div>
+          <div class="research-card" data-index="03">
+            <div class="rc-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M8 20 Q8 8 20 8 Q32 8 32 20 Q32 32 20 32 Q8 32 8 20Z" stroke="#00D4FF" stroke-width="1.5" fill="none" opacity="0.5"/><path d="M12 20 Q12 12 20 12 Q28 12 28 20 Q28 28 20 28 Q12 28 12 20Z" stroke="#00D4FF" stroke-width="1" fill="none" opacity="0.7"/><circle cx="20" cy="20" r="3" fill="#00D4FF"/><path d="M6 14 L14 14 M6 20 L12 20 M6 26 L14 26" stroke="#7B61FF" stroke-width="1" opacity="0.6"/></svg></div>
+            <h3>XR Systems</h3>
+            <p>Human-centered XR interfaces with hand tracking, adaptive feedback, and real-time interaction for spatial tasks.</p>
+            <div class="rc-tags"><span>Meta Quest 3</span><span>HoloLens 2</span><span>Hand Tracking</span></div>
+          </div>
+          <div class="research-card" data-index="04">
+            <div class="rc-icon"><svg viewBox="0 0 40 40" fill="none"><rect x="6" y="16" width="28" height="18" rx="2" stroke="#00D4FF" stroke-width="1.5" fill="none"/><path d="M14 16 L14 10 Q14 6 20 6 Q26 6 26 10 L26 16" stroke="#00D4FF" stroke-width="1.5" fill="none"/><circle cx="20" cy="25" r="4" fill="#00D4FF" opacity="0.2" stroke="#00D4FF" stroke-width="1"/><path d="M20 23 L20 27 M18 25 L22 25" stroke="#00D4FF" stroke-width="1"/></svg></div>
+            <h3>Human-Centered AI</h3>
+            <p>Designing AI systems with user studies, adaptive interfaces, and evaluation frameworks for real-world deployment.</p>
+            <div class="rc-tags"><span>User Study</span><span>HCI</span><span>Adaptive AI</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="container">
+      <div class="section-label mono">02 · Publications</div>
+      <div class="pub-header">
+        <h2 class="section-title">Publications</h2>
+        <div class="pub-filters">
+          <button class="pf-btn active" data-filter="all">All</button>
+          <button class="pf-btn" data-filter="xr">XR / VR</button>
+          <button class="pf-btn" data-filter="spatial">Spatial AI</button>
+          <button class="pf-btn" data-filter="cv">Computer Vision</button>
+        </div>
+      </div>
+      <div class="pub-list">
+
+        <div class="pub-item featured" data-cat="xr" data-href="detail/ghost-instructors.html">
+          <div class="pub-thumb pub-thumb-chi">
+            <img src="./images/pub-chi-ghost.png" alt="Ghost Instructors teaser" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta-row">
+              <span class="venue-tag chi">CHI 2026</span>
+              <span class="pub-badge">1st Author · Full Paper</span>
+            </div>
+            <h3>Skill-Adaptive Ghost Instructors: Enhancing Retention and Reducing Over-Reliance in VR Piano Learning</h3>
+            <p class="pub-authors"><strong>Tzu-Hsin Hsieh</strong>, Cassandra Michelle Stefanie Visser, Elmar Eisemann, Ricardo Marroquim</p>
+            <p class="pub-abstract">Designed and evaluated a VR piano learning system with adaptive ghost-hand guidance. Compared static vs. skill-adaptive conditions through a user study measuring retention, over-reliance, and workload.</p>
+            <div class="pub-tags"><span>VR Learning</span><span>Hand Tracking</span><span>Adaptive AI</span><span>User Study</span><span>Meta Quest 3</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-cat="spatial" data-href="detail/urbansight.html">
+          <div class="pub-thumb pub-thumb-caadria">
+            <img src="./images/proj-urbansight.png" alt="UrbanSight" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta-row">
+              <span class="venue-tag caadria">CAADRIA 2024</span>
+              <span class="pub-badge">1st Author · Full Paper</span>
+            </div>
+            <h3>UrbanSight: Application of Digital Twin to Augmented Reality</h3>
+            <p class="pub-authors"><strong>Tzu-Hsin Hsieh</strong>, Tay Sheng J.</p>
+            <p class="pub-abstract">Built a collaborative multi-user MR environment where users interact with a shared digital twin in real time, integrating BIM and 3D spatial data via HoloLens 2.</p>
+            <div class="pub-tags"><span>Digital Twin</span><span>AR</span><span>HoloLens 2</span><span>BIM</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-cat="spatial" data-href="detail/m3.html">
+          <div class="pub-thumb pub-thumb-sigspatial">
+            <img src="./images/pub-sigspatial2025-fig.png" alt="M3 paper" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta-row">
+              <span class="venue-tag sigspatial">ACM SIGSPATIAL 2025</span>
+            </div>
+            <h3>M3: Recommendation via Attention-Graph Cluster Q-Learning with Multi-Scale Spatial Heterogeneity for Green Attractions</h3>
+            <p class="pub-authors">Lai, Shih-Yu, <strong>Tzu-Hsin Hsieh</strong>, Pei-Chi Tsai, et al.</p>
+            <p class="pub-abstract">Proposed a multi-stakeholder recommendation system leveraging attention-graph Q-learning with multi-scale spatial heterogeneity for transportation and green attraction planning.</p>
+            <div class="pub-tags"><span>Spatial AI</span><span>GIS</span><span>Graph Learning</span><span>Recommendation</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-cat="spatial" data-href="detail/greenspot.html">
+          <div class="pub-thumb pub-thumb-sigspatial">
+            <img src="./images/pub-sigspatial2024-fig.png" alt="GreenSpot paper" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta-row">
+              <span class="venue-tag sigspatial">ACM SIGSPATIAL 2024</span>
+            </div>
+            <h3>GreenSpot: Improving Public Transport with GIS-Based AR and Cluster-GCN Recommendation</h3>
+            <p class="pub-authors">Lai, Shih-Yu, <strong>Tzu-Hsin Hsieh</strong>, Sing-Kai Ling, et al.</p>
+            <div class="pub-tags"><span>GIS</span><span>AR</span><span>Graph CNN</span><span>Public Transport</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-cat="cv" data-href="detail/tmsr.html">
+          <div class="pub-thumb pub-thumb-ieee">
+            <img src="./images/pub-tmsr-fig.png" alt="TMSR paper" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta-row">
+              <span class="venue-tag ieee">IEEE ECICE 2023</span>
+            </div>
+            <h3>TMSR: Tiny Multi-path CNNs for Super Resolution</h3>
+            <p class="pub-authors">Chia Hung L., <strong>Tzu-Hsin Hsieh</strong>, et al.</p>
+            <p class="pub-abstract">Proposed a lightweight multi-path CNN architecture for image super-resolution optimized for efficiency under hardware constraints.</p>
+            <div class="pub-tags"><span>Computer Vision</span><span>Super Resolution</span><span>CNN</span><span>Deep Learning</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label mono">03 · Projects</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid-new">
+
+        <!-- Ghost Instructors - Large left -->
+        <div class="proj-card-new large-left" data-href="detail/ghost-instructors.html">
+          <div class="proj-img-wrap">
+            <img src="./images/proj-ghost-vr.png" alt="Skill-Adaptive Ghost Instructors" onerror="this.src='./images/pub-chi-ghost.png'" />
+            <div class="proj-img-overlay"></div>
+            <div class="proj-img-content">
+              <div class="proj-venue-badge">CHI 2026</div>
+            </div>
+          </div>
+          <div class="proj-card-info">
+            <div class="proj-card-top">
+              <span class="proj-card-year mono">2025</span>
+              <div class="proj-card-tags"><span>Meta Quest 3</span><span>Hand Tracking</span><span>Unity / C#</span></div>
+            </div>
+            <h3>Skill-Adaptive Ghost Instructors</h3>
+            <p>VR piano learning system with ghost-hand guidance, real-time hand tracking, and skill-adaptive transparency control. Evaluated retention, over-reliance, and cognitive workload through a formal user study.</p>
+          </div>
+        </div>
+
+        <!-- UrbanSight -->
+        <div class="proj-card-new" data-href="detail/urbansight.html">
+          <div class="proj-img-wrap">
+            <img src="./images/proj-urbansight.png" alt="UrbanSight" />
+            <div class="proj-img-overlay"></div>
+            <div class="proj-img-content">
+              <div class="proj-venue-badge">CAADRIA 2024</div>
+            </div>
+          </div>
+          <div class="proj-card-info">
+            <div class="proj-card-top">
+              <span class="proj-card-year mono">2024</span>
+              <div class="proj-card-tags"><span>HoloLens 2</span><span>Digital Twin</span><span>MR</span></div>
+            </div>
+            <h3>UrbanSight</h3>
+            <p>Collaborative multi-user MR space with real-time digital twin interaction, BIM integration, and shared spatial workflows for urban design visualization.</p>
+          </div>
+        </div>
+
+        <!-- CityScope -->
+        <div class="proj-card-new" data-href="detail/cityscope.html">
+          <div class="proj-img-wrap">
+            <img src="./images/proj-cityscope.png" alt="CityScope" />
+            <div class="proj-img-overlay"></div>
+            <div class="proj-img-content">
+              <div class="proj-venue-badge">MIT UROP · 2023</div>
+            </div>
+          </div>
+          <div class="proj-card-info">
+            <div class="proj-card-top">
+              <span class="proj-card-year mono">2023</span>
+              <div class="proj-card-tags"><span>AR / iOS</span><span>AprilTag</span><span>Weather API</span></div>
+            </div>
+            <h3>CityScope AR</h3>
+            <p>AR app visualizing real-time 3D weather data from Taiwan's Central Weather Bureau onto a physical island model using AprilTag-based spatial registration.</p>
+          </div>
+        </div>
+
+        <!-- Non-Euclidean VR -->
+        <div class="proj-card-new" data-href="detail/noneuclidean.html">
+          <div class="proj-img-wrap">
+            <img src="./images/proj-noneuclidean.png" alt="Non-Euclidean VR" />
+            <div class="proj-img-overlay"></div>
+          </div>
+          <div class="proj-card-info">
+            <div class="proj-card-top">
+              <span class="proj-card-year mono">2021</span>
+              <div class="proj-card-tags"><span>VR</span><span>Unity / C#</span><span>HTC VIVE</span></div>
+            </div>
+            <h3>Non-Euclidean VR Space</h3>
+            <p>VR environment using connected virtual spaces and scale mismatches to create impossible-space and size-perception effects — exploring spatial cognition in XR.</p>
+          </div>
+        </div>
+
+        <!-- Crowd Prediction -->
+        <div class="proj-card-new" data-href="detail/crowd-prediction.html">
+          <div class="proj-img-wrap">
+            <img src="./images/proj-crowd.png" alt="Crowd Prediction" />
+            <div class="proj-img-overlay"></div>
+          </div>
+          <div class="proj-card-info">
+            <div class="proj-card-top">
+              <span class="proj-card-year mono">2022</span>
+              <div class="proj-card-tags"><span>GRU</span><span>Time Series</span><span>Web System</span></div>
+            </div>
+            <h3>Crowd Counting & Prediction</h3>
+            <p>Pedestrian flow prediction dashboard built with Tainan City Government and Far EasTone, using GRU-based time-series modeling and geospatial data analysis.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="container">
+      <div class="section-label mono">04 · Recognition</div>
+      <h2 class="section-title">Honors & Awards</h2>
+      <div class="awards-list">
+        <div class="award-item">
+          <div class="award-year mono">2024</div>
+          <div class="award-body">
+            <div class="award-title">Young CAADRIA Award</div>
+            <div class="award-org">Computer-Aided Architectural Design Research in Asia</div>
+          </div>
+          <div class="award-icon">🏆</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year mono">2023</div>
+          <div class="award-body">
+            <div class="award-title">Best Paper Award</div>
+            <div class="award-org">Architectural Institute of Taiwan</div>
+          </div>
+          <div class="award-icon">📄</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year mono">2023</div>
+          <div class="award-body">
+            <div class="award-title">Gold Award</div>
+            <div class="award-org">Cathay Life Real Estate Business Case Analysis Contest</div>
+          </div>
+          <div class="award-icon">🥇</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year mono">2022</div>
+          <div class="award-body">
+            <div class="award-title">Gold Award</div>
+            <div class="award-org">IEEE Signal Processing Society AIoT Competition</div>
+          </div>
+          <div class="award-icon">🥇</div>
+        </div>
+        <div class="award-item">
+          <div class="award-year mono">2022</div>
+          <div class="award-body">
+            <div class="award-title">Silver Award</div>
+            <div class="award-org">Tainan City Digital Governance Talent Training Program</div>
+          </div>
+          <div class="award-icon">🥈</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label mono">05 · Contact</div>
+      <div class="contact-header">
+        <h2>Let's <span class="accent">connect</span></h2>
+        <p>Open to research collaborations, internship opportunities, and conversations about Spatial AI &amp; XR.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:thhsieh@tudelft.nl" class="contact-card">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </div>
+          <div>
+            <div class="cc-label">Email</div>
+            <div class="cc-value">thhsieh@tudelft.nl</div>
+          </div>
+        </a>
+        <a href="https://github.com/celine-hsieh" target="_blank" class="contact-card">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div>
+            <div class="cc-label">GitHub</div>
+            <div class="cc-value">celine-hsieh</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/celinehsieh68" target="_blank" class="contact-card">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div>
+            <div class="cc-label">LinkedIn</div>
+            <div class="cc-value">celinehsieh68</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1emE5Y3f6EMxLD-iNYDgx6ipIINEURow_?usp=sharing" target="_blank" class="contact-card contact-card-cv">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4"/><path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          </div>
+          <div>
+            <div class="cc-label">Curriculum Vitae</div>
+            <div class="cc-value">↓ CV</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <a href="ar.html" class="btn-ar">
+        <span class="ar-dot"></span> Enable AR
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

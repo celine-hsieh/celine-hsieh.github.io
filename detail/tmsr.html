@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMSR · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#publications" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag ieee">IEEE ECICE 2023</span>
+        <span class="detail-cat-tag">Computer Vision</span>
+      </div>
+      <h1 class="detail-title">TMSR: Tiny Multi-path CNNs for Super Resolution</h1>
+      <p class="detail-authors">Chia Hung L., <strong>Tzu-Hsin Hsieh</strong>, et al.</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/pub-tmsr-fig.png" alt="TMSR CNN architecture" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Abstract</h2>
+          <p>TMSR (Tiny Multi-path Super Resolution) proposes a lightweight convolutional neural network architecture for single-image super resolution, optimized for hardware-constrained edge devices. The multi-path design extracts features at multiple receptive field scales simultaneously, fusing them through a channel-attention aggregation module to reconstruct high-frequency image detail efficiently.</p>
+          <p>Experiments on benchmark SR datasets demonstrate competitive PSNR/SSIM scores with significantly fewer parameters than baseline models, making TMSR suitable for deployment on embedded systems and mobile hardware.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Contributions</h2>
+          <ul class="detail-list">
+            <li>Multi-path convolutional feature extraction with parallel branches at 3×3, 5×5, and dilated kernels.</li>
+            <li>Channel-attention module for adaptive feature fusion across paths.</li>
+            <li>Pixel-shuffle upsampling for sub-pixel reconstruction without checkerboard artifacts.</li>
+            <li>Achieves competitive PSNR on DIV2K, Set5, and Set14 at &lt;200K parameters.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>PyTorch</span><span>CNN</span><span>Super Resolution</span>
+            <span>Channel Attention</span><span>Edge AI</span>
+            <span>Computer Vision</span><span>IEEE ECICE 2023</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Publication Info</h3>
+          <dl>
+            <dt>Venue</dt><dd>IEEE ECICE 2023</dd>
+            <dt>Year</dt><dd>2023</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="greenspot.html" class="related-link">GreenSpot (Spatial AI)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

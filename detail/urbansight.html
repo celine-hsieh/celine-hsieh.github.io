@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UrbanSight · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#publications" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag caadria">CAADRIA 2024</span>
+        <span class="pub-badge">1st Author · Full Paper</span>
+        <span class="detail-cat-tag">Spatial AI</span>
+      </div>
+      <h1 class="detail-title">UrbanSight: Application of Digital Twin to Augmented Reality</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong>, Tay Sheng J.</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/proj-urbansight.png" alt="UrbanSight MR environment" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Abstract</h2>
+          <p>UrbanSight is a collaborative mixed-reality platform that connects a live digital twin with physical architectural models through HoloLens 2. Multiple users share a synchronized holographic workspace, interacting with real-time BIM data, geospatial overlays, and 3D urban models co-located in the same physical space.</p>
+          <p>The system was awarded the <strong>Young CAADRIA Award 2024</strong>, recognizing its contribution to integrating digital twin technology with human-centered mixed-reality interfaces for architectural design review.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Contributions</h2>
+          <ul class="detail-list">
+            <li>Multi-user shared holographic space using Azure Spatial Anchors for world-locked alignment across HoloLens 2 devices.</li>
+            <li>Real-time BIM integration: IFC data streamed and rendered as interactive 3D holograms at 1:1 and reduced scales.</li>
+            <li>Gesture-based UI for layer toggling, cross-section cutting, and annotation directly in AR space.</li>
+            <li>Received the <strong>Young CAADRIA Award</strong> at CAADRIA 2024, Singapore.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>HoloLens 2</span><span>MRTK 3</span><span>Unity / C#</span>
+            <span>Azure Spatial Anchors</span><span>BIM / IFC</span><span>Digital Twin</span>
+            <span>Mixed Reality</span><span>CAADRIA 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Publication Info</h3>
+          <dl>
+            <dt>Venue</dt><dd>CAADRIA 2024 — Full Paper</dd>
+            <dt>Award</dt><dd>🏆 Young CAADRIA Award</dd>
+            <dt>Role</dt><dd>First Author</dd>
+            <dt>Year</dt><dd>2024</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="ghost-instructors.html" class="related-link">Ghost Instructors (XR)</a>
+          <a href="cityscope.html" class="related-link">CityScope AR</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

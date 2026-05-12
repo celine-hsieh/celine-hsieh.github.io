@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M3 · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#publications" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag sigspatial">ACM SIGSPATIAL 2025</span>
+        <span class="detail-cat-tag">Spatial AI</span>
+      </div>
+      <h1 class="detail-title">M3: Recommendation via Attention-Graph Cluster Q-Learning with Multi-Scale Spatial Heterogeneity for Green Attractions</h1>
+      <p class="detail-authors">Lai, Shih-Yu, <strong>Tzu-Hsin Hsieh</strong>, Pei-Chi Tsai, et al.</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/pub-sigspatial2025-fig.png" alt="M3 paper figure" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Abstract</h2>
+          <p>M3 addresses the challenge of sustainable transportation and leisure planning by proposing a multi-stakeholder recommendation framework that integrates attention-based graph clustering with Q-Learning. The system models spatial heterogeneity at multiple scales — local, district, and city-level — to balance user preferences, operator objectives, and environmental impact when recommending green attractions.</p>
+          <p>Published at ACM SIGSPATIAL 2025, the work contributes a novel reinforcement learning formulation that treats spatial recommendation as a sequential decision process over heterogeneous graph structures.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Contributions</h2>
+          <ul class="detail-list">
+            <li>Multi-scale spatial heterogeneity encoding using hierarchical graph attention networks (HAT-GNN).</li>
+            <li>Q-Learning agent that optimizes multi-stakeholder reward (user satisfaction, operator throughput, eco-score).</li>
+            <li>Cluster-based action space reduction for scalable real-world deployment.</li>
+            <li>Evaluation on real geospatial datasets from Tainan and Taipei metropolitan areas.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>Graph Neural Networks</span><span>Q-Learning</span><span>Attention Mechanism</span>
+            <span>GIS</span><span>Spatial AI</span><span>Python</span>
+            <span>PyTorch</span><span>ACM SIGSPATIAL 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Publication Info</h3>
+          <dl>
+            <dt>Venue</dt><dd>ACM SIGSPATIAL 2025</dd>
+            <dt>Year</dt><dd>2025</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="greenspot.html" class="related-link">GreenSpot (SIGSPATIAL 2024)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

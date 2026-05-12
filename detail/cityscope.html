@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityScope AR · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">TH<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="venue-tag caadria">MIT UROP · 2023</span>
+        <span class="detail-cat-tag">AR / Spatial AI</span>
+      </div>
+      <h1 class="detail-title">CityScope AR: Real-Time 3D Weather Visualization on Physical Island Models</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong> — City Science Lab @ Taipei, MIT UROP Program</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+        <div class="detail-thumb">
+          <img src="../images/proj-cityscope.png" alt="CityScope AR" />
+        </div>
+
+        <div class="detail-section">
+          <h2>Project Overview</h2>
+          <p>CityScope AR is an iOS augmented reality application developed during the MIT UROP program at City Science Lab @ Taipei (2023). The app overlays real-time 3D weather data from Taiwan's Central Weather Bureau directly onto a physical island tabletop model, enabling researchers and city planners to experience climate simulations in an intuitive spatial context.</p>
+          <p>Spatial registration is achieved through AprilTag marker detection and ARKit plane detection, maintaining centimeter-level accuracy between the virtual weather layers and the physical model surface.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Features</h2>
+          <ul class="detail-list">
+            <li>AprilTag-based spatial anchoring with ARKit plane detection for robust model registration.</li>
+            <li>Real-time weather data pipeline from Taiwan Central Weather Bureau (CWB) API — wind speed, precipitation, temperature.</li>
+            <li>3D volumetric wind vectors and rain particle systems rendered at correct geographic scale.</li>
+            <li>Multi-layer toggle UI for switching between weather variables and time frames.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>iOS / Swift</span><span>ARKit</span><span>AprilTag</span>
+            <span>SceneKit</span><span>Weather API</span><span>MIT UROP</span>
+            <span>City Science Lab</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Project Info</h3>
+          <dl>
+            <dt>Program</dt><dd>MIT UROP</dd>
+            <dt>Lab</dt><dd>City Science Lab @ Taipei</dd>
+            <dt>Year</dt><dd>Feb – Jun 2023</dd>
+            <dt>Platform</dt><dd>iOS (iPhone / iPad)</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="urbansight.html" class="related-link">UrbanSight (MR)</a>
+          <a href="ghost-instructors.html" class="related-link">Ghost Instructors (VR)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>
