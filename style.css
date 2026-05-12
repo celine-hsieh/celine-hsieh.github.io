@@ -15,13 +15,18 @@
   --mono: 'JetBrains Mono', monospace;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   overflow-x: hidden;
+  max-width: 100%;
   line-height: 1.6;
 }
 
@@ -58,6 +63,7 @@ body {
 }
 #hero-canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
+  max-width: 100vw;
 }
 .hero-content {
   position: relative; z-index: 2; text-align: center;
@@ -563,4 +569,18 @@ footer {
   .hero-cta { flex-direction: column; }
   .research-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .about-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .exp-edu-layout { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .hero-badges { gap: 0.4rem; }
+  .badge { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
+  .container { padding: 0 1.25rem; }
+  section { padding: 4rem 0; }
+  .about-photo-wrap { display: none; }
+}
+
+/* Prevent any child from breaking out of viewport */
+*, *::before, *::after {
+  max-width: 100%;
+  box-sizing: border-box;
 }
