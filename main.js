@@ -276,6 +276,7 @@ const themeToggle = document.getElementById('themeToggle');
 
 function applyTheme(light) {
   document.body.classList.toggle('light-mode', light);
+  document.documentElement.classList.toggle('light-mode', light);
   if (themeToggle) {
     const iconMoon = themeToggle.querySelector('.icon-moon');
     const iconSun = themeToggle.querySelector('.icon-sun');

@@ -19,6 +19,10 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100%;
+  background: #050A14;
+}
+html.light-mode {
+  background: #F5F7FA;
 }
 
 body {
