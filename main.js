@@ -187,7 +187,7 @@ const observer = new IntersectionObserver((entries) => {
 revealEls.forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
-  el.style.transition = `opacity 0.6s ease ${i * 0.07}s, transform 0.6s ease ${i * 0.07}s`;
+  el.style.transition = `opacity 0.35s ease ${i * 0.04}s, transform 0.35s ease ${i * 0.04}s`;
   observer.observe(el);
 });
 
