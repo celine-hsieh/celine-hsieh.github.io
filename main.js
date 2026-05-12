@@ -1,6 +1,7 @@
 // ===== THREE.JS POINT CLOUD HERO =====
 (function () {
   const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return; // detail pages don't have hero canvas — skip to prevent crash
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
