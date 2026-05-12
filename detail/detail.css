@@ -164,6 +164,27 @@ nav .nav-logo {
   padding: 0.25rem 0.65rem; border-radius: 2rem;
 }
 
+/* ===== BIBTEX ===== */
+.bibtex-wrap {
+  margin-top: 0.5rem;
+  position: relative;
+}
+.bibtex-block {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 0.6rem; padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  font-family: var(--mono); font-size: 0.75rem; line-height: 1.7;
+  color: var(--text-muted); overflow-x: auto; white-space: pre;
+  margin: 0;
+}
+.bibtex-copy {
+  position: absolute; top: 0.6rem; right: 0.6rem;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text-muted); font-family: var(--mono); font-size: 0.68rem;
+  padding: 0.25rem 0.65rem; border-radius: 0.4rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.bibtex-copy:hover { border-color: var(--accent); color: var(--accent); }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .detail-layout { grid-template-columns: 1fr; gap: 2.5rem; }
