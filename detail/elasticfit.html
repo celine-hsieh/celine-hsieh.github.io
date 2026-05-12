@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElasticFit · Celine Hsieh</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta name="theme-color" id="themeColorMeta" content="#050A14" />
+  <script>
+    (function(){
+      if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
+      var light = localStorage.getItem('theme') === 'light';
+      if (light) document.documentElement.classList.add('light-mode');
+      var m = document.getElementById('themeColorMeta');
+      if (m) m.content = light ? '#EBF0F6' : '#050A14';
+    })();
+  </script>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">C<span class="accent">.</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#publications">Publications</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#awards">Awards</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../ar.html" class="nav-ar">⬡ AR</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle">
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <section class="detail-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link mono">← Back</a>
+      <div class="detail-meta-row">
+        <span class="detail-cat-tag">3D / Generative AI</span>
+        <span class="pub-badge">Manuscript under review</span>
+      </div>
+      <h1 class="detail-title">ElasticFit: Fit-Aware 3D Object Insertion via VLM Reasoning and Generative Adaptation</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong>, Ricardo Marroquim</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container detail-layout">
+
+      <div class="detail-main">
+
+        <div class="detail-section">
+          <h2>Abstract</h2>
+          <p>Inserting a 3D object into an existing scene requires more than placement — it demands that the object <em>fits</em> the available space while obeying geometric and physical constraints. We present <em>ElasticFit</em>, a framework for fit-aware 3D object insertion that combines VLM-based semantic-spatial reasoning with scene-conditioned object generation and geometry- and physics-aware fitting.</p>
+          <p>Given a natural-language instruction and an existing 3D scene, ElasticFit infers structured fitting cues that encode the target region, object orientation, support constraints, and adaptation behavior. A scene-conditioned object prior is generated and then refined through rigid, uniform, or elastic adaptation to achieve stable, physically plausible insertion. Evaluated on ReplicaCAD and Replica datasets, ElasticFit improves spatial relation success from 50.8% to 69.7% and support success from 48.3% to 91.7% over strong VLM-guided baselines.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Key Contributions</h2>
+          <ul class="detail-list">
+            <li>A unified <em>structured fitting cue</em> representation G that jointly encodes placement geometry, adaptation strategy, and semantic conditioning — bridging high-level VLM reasoning with downstream geometric realization.</li>
+            <li>A three-stage pipeline: semantic-spatial grounding via Set-of-Mark VLM queries, scene-conditioned 2D-to-3D object prior generation using SDXL + TRELLIS, and geometry- and physics-aware fitting with three adaptation modes (rigid, uniform, elastic).</li>
+            <li>A physics-guided settling stage using PyBullet that refines object pose under gravity and contact dynamics for physically realistic final insertions.</li>
+            <li>Evaluation across two benchmark datasets (ReplicaCAD and Replica) on 120 tasks spanning common placement and fit-critical conditions, outperforming LayoutGPT, Holodeck, and LayoutVLM across all key metrics.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>System Design</h2>
+          <p>ElasticFit operates in three stages. <em>Stage 1: Semantic-Spatial Grounding</em> renders the scene from the user's viewpoint and constructs an XYZ buffer and semantic ID buffer. A Set-of-Mark image is generated and a VLM is queried to predict a structured JSON specifying the anchor object, target placement pixel, optional orientation cues, snapping behavior, and adaptation mode. These image-space predictions are lifted into a 3D ghost box that encodes the maximum fitting volume.</p>
+          <p><em>Stage 2: Scene-Conditioned Object Prior</em> uses the ghost box dimensions to define a canvas for an SDXL-style text-to-image generator, producing a 2D object image with proportions biased toward the target fitting region. The image is then lifted into an initial 3D mesh using TRELLIS, providing a close-fit initialization for downstream refinement.</p>
+          <p><em>Stage 3: Geometry- and Physics-Aware Fitting</em> refines the prior using one of three adaptation modes. <em>Rigid</em> mode preserves object geometry and solves for a collision-aware pose. <em>Uniform</em> mode optimizes a single global scale factor to fit the target region while preserving aspect ratio. <em>Elastic</em> mode applies anisotropic scaling along the box-local axes, enabling non-uniform adaptation to constrained or gap-like spaces. After mode-specific fitting, PyBullet physics simulation settles the object naturally on the supporting scene geometry.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Results</h2>
+          <p>On the Common Placement Set (60 tasks), ElasticFit achieves <em>69.7% SRS</em>, 91.7% CFR, and <em>91.7% SupR</em> — improving over the best baseline (LayoutGPT: 50.8% SRS, 48.3% SupR). On the Fit-Critical Set (60 tasks including pose-and-contact and gap-fitting conditions), ElasticFit achieves 60.8% SRS, 71.7% CFR, and 83.3% SupR with a contextual plausibility score of 4.57/5. Cross-dataset validation on ReplicaCAD and Replica confirms robust performance across both clean CAD-like and noisy reconstructed scenes.</p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Technologies</h2>
+          <div class="detail-tags">
+            <span>VLM Reasoning</span><span>SDXL</span><span>TRELLIS</span>
+            <span>PyBullet</span><span>Set-of-Mark</span><span>3D Object Insertion</span>
+            <span>ReplicaCAD</span><span>Replica</span><span>Generative AI</span>
+            <span>Spatial AI</span>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Publication Info</h3>
+          <dl>
+            <dt>Status</dt><dd>Manuscript under review</dd>
+            <dt>Role</dt><dd>First Author</dd>
+            <dt>Year</dt><dd>2025</dd>
+            <dt>Topic</dt><dd>3D Generative AI / Spatial Reasoning</dd>
+          </dl>
+        </div>
+        <div class="sidebar-card">
+          <h3>Related</h3>
+          <a href="ghost-instructors.html" class="related-link">Ghost Instructors (VR)</a>
+          <a href="urbansight.html" class="related-link">UrbanSight (XR)</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>
