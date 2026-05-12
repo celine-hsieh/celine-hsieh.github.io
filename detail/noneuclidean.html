@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <meta name="theme-color" id="themeColorMeta" content="#050A14" />
+  <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
+  <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
   <script>
     (function(){
       if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
       var light = localStorage.getItem('theme') === 'light';
       if (light) document.documentElement.classList.add('light-mode');
       document.documentElement.style.colorScheme = light ? 'light' : 'dark';
-      var m = document.getElementById('themeColorMeta');
-      if (m) m.content = light ? '#EBF0F6' : '#050A14';
+      document.getElementById('themeColorDark').media  = light ? 'not all' : '(max-width: 99999px)';
+      document.getElementById('themeColorLight').media = light ? '(max-width: 99999px)' : 'not all';
     })();
   </script>
 </head>

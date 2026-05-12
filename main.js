@@ -294,20 +294,13 @@ function applyTheme(light) {
     setTimeout(() => { navbar.style.background = ''; }, 550);
   }
 
-  // Update iOS status bar color
-  // Must remove first, then re-insert in next animation frame so iOS
-  // processes the removal as a real DOM mutation before the new value lands.
-  const themeMeta = document.getElementById('themeColorMeta');
-  if (themeMeta) {
-    const color = light ? '#EBF0F6' : '#050A14';
-    themeMeta.parentNode.removeChild(themeMeta);
-    requestAnimationFrame(() => {
-      const newMeta = document.createElement('meta');
-      newMeta.name = 'theme-color';
-      newMeta.id = 'themeColorMeta';
-      newMeta.content = color;
-      document.head.appendChild(newMeta);
-    });
+  // Update iOS status bar: toggle `media` attribute between the two meta tags.
+  // This is the most reliable trigger for iOS Safari to repaint its chrome.
+  const tcDark  = document.getElementById('themeColorDark');
+  const tcLight = document.getElementById('themeColorLight');
+  if (tcDark && tcLight) {
+    tcDark.media  = light ? 'not all' : '(max-width: 99999px)';
+    tcLight.media = light ? '(max-width: 99999px)' : 'not all';
   }
   localStorage.setItem('theme', light ? 'light' : 'dark');
 }
