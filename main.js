@@ -293,12 +293,19 @@ function applyTheme(light) {
   }
 
   // Update iOS status bar color
+  // Must remove first, then re-insert in next animation frame so iOS
+  // processes the removal as a real DOM mutation before the new value lands.
   const themeMeta = document.getElementById('themeColorMeta');
   if (themeMeta) {
     const color = light ? '#EBF0F6' : '#050A14';
-    themeMeta.setAttribute('content', color);
     themeMeta.parentNode.removeChild(themeMeta);
-    document.head.appendChild(themeMeta);
+    requestAnimationFrame(() => {
+      const newMeta = document.createElement('meta');
+      newMeta.name = 'theme-color';
+      newMeta.id = 'themeColorMeta';
+      newMeta.content = color;
+      document.head.appendChild(newMeta);
+    });
   }
   localStorage.setItem('theme', light ? 'light' : 'dark');
 }
