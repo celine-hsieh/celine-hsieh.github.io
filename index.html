@@ -12,7 +12,7 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <div class="nav-logo">TH<span class="accent">.</span></div>
+    <div class="nav-logo">C<span class="accent">.</span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#publications">Publications</a></li>
@@ -21,7 +21,30 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="ar.html" class="nav-ar">⬡ AR</a></li>
     </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light mode">
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#publications" class="mobile-link">Publications</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#awards" class="mobile-link">Awards</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="ar.html" class="mobile-link nav-ar">⬡ AR</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <!-- HERO -->
   <section id="hero">
@@ -33,12 +56,6 @@
       <div class="hero-tag mono">Ph.D. Researcher @ TU Delft</div>
       <h1>Tzu-Hsin Hsieh<br/><span class="accent">Celine</span></h1>
       <p class="hero-sub">Spatial AI &nbsp;·&nbsp; Generative 3D &nbsp;·&nbsp; XR Systems</p>
-      <div class="hero-badges">
-        <span class="badge">3D Scene Understanding</span>
-        <span class="badge">VLM Reasoning</span>
-        <span class="badge">XR Hand Tracking</span>
-        <span class="badge">Generative AI</span>
-      </div>
       <div class="hero-cta">
         <a href="#publications" class="btn-primary">Publications</a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
@@ -230,7 +247,7 @@
         <h2 class="section-title">Publications</h2>
         <div class="pub-filters">
           <button class="pf-btn active" data-filter="all">All</button>
-          <button class="pf-btn" data-filter="xr">XR / VR</button>
+          <button class="pf-btn" data-filter="xr">XR</button>
           <button class="pf-btn" data-filter="spatial">Spatial AI</button>
           <button class="pf-btn" data-filter="cv">Computer Vision</button>
         </div>
@@ -239,7 +256,7 @@
 
         <div class="pub-item featured" data-cat="xr" data-href="detail/ghost-instructors.html">
           <div class="pub-thumb pub-thumb-chi">
-            <img src="./images/pub-chi-ghost.png" alt="Ghost Instructors teaser" />
+            <img src="./images/proj-ghost-vr.png" alt="Ghost Instructors VR" />
           </div>
           <div class="pub-body">
             <div class="pub-meta-row">
@@ -310,6 +327,21 @@
             <p class="pub-authors">Chia Hung L., <strong>Tzu-Hsin Hsieh</strong>, et al.</p>
             <p class="pub-abstract">Proposed a lightweight multi-path CNN architecture for image super-resolution optimized for efficiency under hardware constraints.</p>
             <div class="pub-tags"><span>Computer Vision</span><span>Super Resolution</span><span>CNN</span><span>Deep Learning</span></div>
+          </div>
+        </div>
+
+        <div class="pub-item" data-cat="spatial" data-href="detail/crowd-prediction.html">
+          <div class="pub-thumb pub-thumb-acis">
+            <img src="./images/proj-crowd.png" alt="Crowd Monitoring ACIS" />
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta-row">
+              <span class="venue-tag acis">ACIS 2023</span>
+            </div>
+            <h3>Enhancing Urban Crowd Monitoring through Predictive Modelling System with Diverse Geospatial Datasets</h3>
+            <p class="pub-authors">Hsun Ping H., Tzu Chang L., <strong>Tzu-Hsin Hsieh</strong>, et al.</p>
+            <p class="pub-abstract">Developed a predictive modeling system for urban pedestrian flow monitoring integrating diverse geospatial datasets for smart city applications.</p>
+            <div class="pub-tags"><span>GRU</span><span>Geospatial</span><span>Urban Computing</span><span>Smart City</span></div>
           </div>
         </div>
 
