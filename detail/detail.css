@@ -164,10 +164,26 @@ nav .nav-logo {
   padding: 0.25rem 0.65rem; border-radius: 2rem;
 }
 
+/* ===== PAPER LINK ===== */
+.paper-link {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  color: var(--accent); border: 1px solid rgba(0,212,255,0.4);
+  background: rgba(0,212,255,0.06);
+  padding: 0.3rem 0.75rem; border-radius: 2rem;
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.paper-link:hover { background: rgba(0,212,255,0.14); border-color: var(--accent); }
+
 /* ===== BIBTEX ===== */
 .bibtex-wrap {
   margin-top: 0.5rem;
   position: relative;
+}
+@media (max-width: 600px) {
+  .bibtex-block { font-size: 0.68rem; padding: 1rem; }
+  .detail-section + .detail-section { margin-top: 2.5rem; }
 }
 .bibtex-block {
   background: var(--bg2); border: 1px solid var(--border);
