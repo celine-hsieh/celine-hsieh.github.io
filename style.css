@@ -423,7 +423,14 @@ section:nth-child(even) { background: var(--bg2); }
   display: grid; grid-template-columns: 140px 1fr;
   transition: all 0.3s; backdrop-filter: blur(8px);
 }
-.pub-item:hover { border-color: rgba(0,212,255,0.25); border-left-color: var(--accent); transform: translateX(4px); box-shadow: 4px 0 20px rgba(0,212,255,0.05); }
+.pub-item:hover {
+  border-top-color: rgba(0,212,255,0.25);
+  border-right-color: rgba(0,212,255,0.25);
+  border-bottom-color: rgba(0,212,255,0.25);
+  border-left-color: var(--accent);
+  transform: translateX(4px);
+  box-shadow: 4px 0 20px rgba(0,212,255,0.05);
+}
 .pub-item.pub-hidden { display: none; }
 
 /* Publication thumbnail */
