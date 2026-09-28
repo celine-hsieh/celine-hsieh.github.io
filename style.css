@@ -454,6 +454,7 @@ section:nth-child(even) { background: var(--bg2); }
 .pub-thumb-caadria { background: #060d1a; }
 .pub-thumb-sigspatial { background: linear-gradient(135deg, #080814 0%, #110a1e 100%); }
 .pub-thumb-ieee { background: linear-gradient(135deg, #0d0a00 0%, #1a1200 100%); }
+.pub-thumb-neurips { background: linear-gradient(135deg, #001a0d 0%, #002a14 100%); }
 
 .pub-body { padding: 1.4rem 1.6rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .pub-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
@@ -466,7 +467,7 @@ section:nth-child(even) { background: var(--bg2); }
 .venue-tag.caadria { background: rgba(0,212,255,0.1); color: #60B8D4; border: 1px solid rgba(0,212,255,0.2); }
 .venue-tag.sigspatial { background: rgba(123,97,255,0.1); color: #9B8BFF; border: 1px solid rgba(123,97,255,0.2); }
 .venue-tag.ieee { background: rgba(255,180,0,0.1); color: #FFB400; border: 1px solid rgba(255,180,0,0.2); }
-.venue-tag.neurips { background: rgba(0,200,120,0.1); color: #00C878; border: 1px solid rgba(0,200,120,0.25); }
+.venue-tag.neurips { background: rgba(0,200,120,0.15); color: #00C878; border: 1px solid rgba(0,200,120,0.45); }
 .pub-badge {
   font-family: var(--mono); font-size: 0.62rem;
   color: var(--accent2); background: rgba(123,97,255,0.1);
