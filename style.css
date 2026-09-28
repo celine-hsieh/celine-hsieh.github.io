@@ -178,7 +178,7 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
   background: rgba(0,212,255,0.05);
 }
 .hero-content h1 {
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
 }
 .hero-chinese {
