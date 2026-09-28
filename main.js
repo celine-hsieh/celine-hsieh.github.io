@@ -4,10 +4,13 @@
   if (!canvas) return; // detail pages don't have hero canvas — skip to prevent crash
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  const hero = document.getElementById('hero');
+  const getW = () => hero.offsetWidth;
+  const getH = () => hero.offsetHeight;
+  renderer.setSize(getW(), getH());
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const camera = new THREE.PerspectiveCamera(60, getW() / getH(), 0.1, 1000);
   camera.position.set(0, 0, 28);
 
   // --- Point Cloud ---
@@ -69,7 +72,7 @@
     size: 0.15,
     vertexColors: true,
     transparent: true,
-    opacity: 0.45,
+    opacity: 0.18,
     sizeAttenuation: true,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
@@ -127,9 +130,9 @@
 
   // --- Resize ---
   window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = getW() / getH();
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(getW(), getH());
   });
 
   // --- Animate ---
@@ -155,7 +158,7 @@
     renderer.domElement.style.opacity = fade;
 
     // Particle opacity: brighter in light mode
-    material.opacity = document.body.classList.contains('light-mode') ? 0.75 : 0.45;
+    material.opacity = document.body.classList.contains('light-mode') ? 0.35 : 0.18;
 
     renderer.render(scene, camera);
   }
