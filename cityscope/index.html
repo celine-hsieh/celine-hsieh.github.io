@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M3 · Celine Hsieh</title>
+  <title>CityScope AR · Celine Hsieh</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="detail.css" />
+  <link rel="stylesheet" href="../detail/detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
   <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
@@ -42,15 +42,13 @@
 
   <section class="detail-hero">
     <div class="container">
-      <a href="../index.html#publications" class="back-link mono">← Back</a>
+      <a href="../index.html#projects" class="back-link mono">← Back</a>
       <div class="detail-meta-row">
-        <span class="venue-tag sigspatial">ACM SIGSPATIAL 2025</span>
-        <span class="detail-cat-tag">Spatial AI</span>
-
-        <a href="https://dl-acm-org.tudelft.idm.oclc.org/doi/abs/10.1145/3748636.3762708" target="_blank" class="paper-link">↗ Paper</a>
+        <span class="venue-tag caadria">MIT UROP · 2023</span>
+        <span class="detail-cat-tag">AR / Spatial AI</span>
       </div>
-      <h1 class="detail-title">M3: Recommendation via Attention-Graph Cluster Q-Learning with Multi-Scale Spatial Heterogeneity for Green Attractions</h1>
-      <p class="detail-authors">Shih-Yu Lai, <strong>Tzu-Hsin Hsieh</strong>, Pei-Chi Tsai, Chao-Chun Kung, Sing-Kai Ling, Hsun-Ping Hsieh</p>
+      <h1 class="detail-title">CityScope AR: Real-Time 3D Weather Visualization on Physical Island Models</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong> — City Science Lab @ Taipei, MIT UROP Program</p>
     </div>
   </section>
 
@@ -59,60 +57,49 @@
 
       <div class="detail-main">
         <div class="detail-thumb">
-          <img src="../images/pub-sigspatial2025-fig.png" alt="M3 paper figure" />
+          <img src="../images/proj-cityscope.png" alt="CityScope AR" />
         </div>
 
         <div class="detail-section">
-          <h2>Abstract</h2>
-          <p>M3 addresses the challenge of sustainable transportation and leisure planning by proposing a multi-stakeholder recommendation framework that integrates attention-based graph clustering with Q-Learning. The system models spatial heterogeneity at multiple scales — local, district, and city-level — to balance user preferences, operator objectives, and environmental impact when recommending green attractions.</p>
-          <p>Published at ACM SIGSPATIAL 2025, the work contributes a novel reinforcement learning formulation that treats spatial recommendation as a sequential decision process over heterogeneous graph structures.</p>
+          <h2>Project Overview</h2>
+          <p>CityScope AR is an iOS augmented reality application developed during the MIT UROP program at City Science Lab @ Taipei (2023). The app overlays real-time 3D weather data from Taiwan's Central Weather Bureau directly onto a physical island tabletop model, enabling researchers and city planners to experience climate simulations in an intuitive spatial context.</p>
+          <p>Spatial registration is achieved through AprilTag marker detection and ARKit plane detection, maintaining centimeter-level accuracy between the virtual weather layers and the physical model surface.</p>
         </div>
 
         <div class="detail-section">
-          <h2>Key Contributions</h2>
+          <h2>Key Features</h2>
           <ul class="detail-list">
-            <li>Multi-scale spatial heterogeneity encoding using hierarchical graph attention networks (HAT-GNN).</li>
-            <li>Q-Learning agent that optimizes multi-stakeholder reward (user satisfaction, operator throughput, eco-score).</li>
-            <li>Cluster-based action space reduction for scalable real-world deployment.</li>
-            <li>Evaluation on real geospatial datasets from Tainan and Taipei metropolitan areas.</li>
+            <li>AprilTag-based spatial anchoring with ARKit plane detection for robust model registration.</li>
+            <li>Real-time weather data pipeline from Taiwan Central Weather Bureau (CWB) API — wind speed, precipitation, temperature.</li>
+            <li>3D volumetric wind vectors and rain particle systems rendered at correct geographic scale.</li>
+            <li>Multi-layer toggle UI for switching between weather variables and time frames.</li>
           </ul>
         </div>
 
         <div class="detail-section">
           <h2>Technologies</h2>
           <div class="detail-tags">
-            <span>Graph Neural Networks</span><span>Q-Learning</span><span>Attention Mechanism</span>
-            <span>GIS</span><span>Spatial AI</span><span>Python</span>
-            <span>PyTorch</span><span>ACM SIGSPATIAL 2025</span>
-          </div>
-        </div>
-
-        <div class="detail-section bibtex-section">
-          <h2>BibTeX</h2>
-          <div class="bibtex-wrap">
-            <pre class="bibtex-block">@inproceedings{lai2025m3,
-  title={M3: Recommendation via Attention-Graph Cluster Q-Learning with Multi-Scale Spatial Heterogeneity for Multi-Purpose, Multi-Stakeholder Green Attractions in Transportation},
-  author={Lai, Shih-Yu and Hsieh, Tzu-Hsin and Tsai, Pei-Chi and Kung, Chao-Chun and Ling, Sing-Kai and Hsieh, Hsun-Ping},
-  booktitle={Proceedings of the 33rd ACM International Conference on Advances in Geographic Information Systems},
-  pages={39--51},
-  year={2025}
-}</pre>
-            <button class="bibtex-copy" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})">Copy</button>
+            <span>iOS / Swift</span><span>ARKit</span><span>AprilTag</span>
+            <span>SceneKit</span><span>Weather API</span><span>MIT UROP</span>
+            <span>City Science Lab</span>
           </div>
         </div>
       </div>
 
       <aside class="detail-sidebar">
         <div class="sidebar-card">
-          <h3>Publication Info</h3>
+          <h3>Project Info</h3>
           <dl>
-            <dt>Venue</dt><dd>ACM SIGSPATIAL 2025</dd>
-            <dt>Year</dt><dd>2025</dd>
+            <dt>Program</dt><dd>MIT UROP</dd>
+            <dt>Lab</dt><dd>City Science Lab @ Taipei</dd>
+            <dt>Year</dt><dd>Feb – Jun 2023</dd>
+            <dt>Platform</dt><dd>iOS (iPhone / iPad)</dd>
           </dl>
         </div>
         <div class="sidebar-card">
           <h3>Related</h3>
-          <a href="greenspot.html" class="related-link">GreenSpot (SIGSPATIAL 2024)</a>
+          <a href="urbansight.html" class="related-link">UrbanSight (MR)</a>
+          <a href="ghost-instructors.html" class="related-link">Ghost Instructors (VR)</a>
         </div>
       </aside>
 

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crowd Counting &amp; Prediction · Celine Hsieh</title>
+  <title>UrbanSight · Celine Hsieh</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="detail.css" />
+  <link rel="stylesheet" href="../detail/detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
   <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
@@ -42,15 +42,16 @@
 
   <section class="detail-hero">
     <div class="container">
-      <a href="../index.html#projects" class="back-link mono">← Back</a>
+      <a href="../index.html#publications" class="back-link mono">← Back</a>
       <div class="detail-meta-row">
-        <span class="venue-tag" style="background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.4);color:#00D4FF;">Industry Collaboration · 2022</span>
+        <span class="venue-tag caadria">CAADRIA 2024</span>
+        <span class="pub-badge">1st Author · Full Paper</span>
         <span class="detail-cat-tag">Spatial AI</span>
 
-        <a href="https://aisel-aisnet-org.tudelft.idm.oclc.org/acis2023/30/" target="_blank" class="paper-link">↗ Paper</a>
+        <a href="https://www-scopus-com.tudelft.idm.oclc.org/pages/publications/85196731795" target="_blank" class="paper-link">↗ Paper</a>
       </div>
-      <h1 class="detail-title">Crowd Counting &amp; Prediction: GRU-Based Pedestrian Flow Forecasting for Smart City</h1>
-      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong> — Tainan City Government × Far EasTone Telecom</p>
+      <h1 class="detail-title">UrbanSight: Application of Digital Twin to Augmented Reality</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong>, Tay Sheng Jeng</p>
     </div>
   </section>
 
@@ -59,48 +60,64 @@
 
       <div class="detail-main">
         <div class="detail-thumb">
-          <img src="../images/proj-crowd.png" alt="Crowd Prediction Dashboard" />
+          <img src="../images/proj-urbansight.png" alt="UrbanSight MR environment" />
         </div>
 
         <div class="detail-section">
-          <h2>Project Overview</h2>
-          <p>This project was developed in collaboration with Tainan City Government and Far EasTone Telecom as part of a smart-city initiative to improve pedestrian flow management at tourist attractions and transportation hubs. The system combines GRU-based time-series prediction with geospatial analysis to forecast pedestrian density up to 2 hours ahead, visualized through an interactive web dashboard.</p>
-          <p>Telco-derived crowd density data (anonymized mobile signal counts) was fused with weather, calendar, and event data to train the forecasting model, achieving strong results even during irregular holiday and event spikes.</p>
+          <h2>Abstract</h2>
+          <p>UrbanSight is a collaborative mixed-reality platform that connects a live digital twin with physical architectural models through HoloLens 2. Multiple users share a synchronized holographic workspace, interacting with real-time BIM data, geospatial overlays, and 3D urban models co-located in the same physical space.</p>
+          <p>The system was awarded the <strong>Young CAADRIA Award 2024</strong>, recognizing its contribution to integrating digital twin technology with human-centered mixed-reality interfaces for architectural design review.</p>
         </div>
 
         <div class="detail-section">
-          <h2>Key Features</h2>
+          <h2>Key Contributions</h2>
           <ul class="detail-list">
-            <li>GRU (Gated Recurrent Unit) sequence model with multi-variate input: crowd density, weather, time features, event flags.</li>
-            <li>Geospatial heatmap overlays on Leaflet.js web dashboard showing predicted density by zone.</li>
-            <li>Real-time ingestion pipeline from Far EasTone's anonymized telecom crowd signals.</li>
-            <li>Achieved MAE below 8% on held-out test data including holiday seasons.</li>
+            <li>Multi-user shared holographic space using Azure Spatial Anchors for world-locked alignment across HoloLens 2 devices.</li>
+            <li>Real-time BIM integration: IFC data streamed and rendered as interactive 3D holograms at 1:1 and reduced scales.</li>
+            <li>Gesture-based UI for layer toggling, cross-section cutting, and annotation directly in AR space.</li>
+            <li>Received the <strong>Young CAADRIA Award</strong> at CAADRIA 2024, Singapore.</li>
           </ul>
         </div>
 
         <div class="detail-section">
           <h2>Technologies</h2>
           <div class="detail-tags">
-            <span>GRU</span><span>PyTorch</span><span>Time Series</span>
-            <span>Geospatial Analysis</span><span>Leaflet.js</span><span>Flask</span>
-            <span>Smart City</span><span>Python</span>
+            <span>HoloLens 2</span><span>MRTK 3</span><span>Unity / C#</span>
+            <span>Azure Spatial Anchors</span><span>BIM / IFC</span><span>Digital Twin</span>
+            <span>Mixed Reality</span><span>CAADRIA 2024</span>
+          </div>
+        </div>
+
+        <div class="detail-section bibtex-section">
+          <h2>BibTeX</h2>
+          <div class="bibtex-wrap">
+            <pre class="bibtex-block">@inproceedings{hsieh2024urbansight,
+  title={URBANSIGHT: Application of Digital Twin to Augmented Reality},
+  author={Hsieh, Tzu Hsin and Jeng, Tay Sheng},
+  booktitle={29th International Conference on Computer-Aided Architectural Design Research in Asia, CAADRIA 2024},
+  pages={271--280},
+  year={2024},
+  organization={The Association for Computer-Aided Architectural Design Research in Asia}
+}</pre>
+            <button class="bibtex-copy" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})">Copy</button>
           </div>
         </div>
       </div>
 
       <aside class="detail-sidebar">
         <div class="sidebar-card">
-          <h3>Project Info</h3>
+          <h3>Publication Info</h3>
           <dl>
-            <dt>Partners</dt><dd>Tainan City Gov. × Far EasTone</dd>
-            <dt>Year</dt><dd>2022</dd>
-            <dt>Award</dt><dd>🥈 Silver — Tainan Digital Governance Program</dd>
+            <dt>Venue</dt><dd>CAADRIA 2024 — Full Paper</dd>
+            <dt>Award</dt><dd>🏆 Young CAADRIA Award</dd>
+            <dt>Role</dt><dd>First Author</dd>
+            <dt>Year</dt><dd>2024</dd>
           </dl>
         </div>
         <div class="sidebar-card">
           <h3>Related</h3>
-          <a href="greenspot.html" class="related-link">GreenSpot (Spatial AI)</a>
-          <a href="m3.html" class="related-link">M3 (Recommendation)</a>
+          <a href="ghost-instructors.html" class="related-link">Ghost Instructors (XR)</a>
+          <a href="cityscope.html" class="related-link">CityScope AR</a>
         </div>
       </aside>
 

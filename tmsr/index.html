@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GreenSpot · Celine Hsieh</title>
+  <title>TMSR · Celine Hsieh</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="detail.css" />
+  <link rel="stylesheet" href="../detail/detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
   <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
@@ -44,13 +44,13 @@
     <div class="container">
       <a href="../index.html#publications" class="back-link mono">← Back</a>
       <div class="detail-meta-row">
-        <span class="venue-tag sigspatial">ACM SIGSPATIAL 2024</span>
-        <span class="detail-cat-tag">Spatial AI</span>
+        <span class="venue-tag ieee">IEEE ECICE 2023</span>
+        <span class="detail-cat-tag">Computer Vision</span>
 
-        <a href="https://dl-acm-org.tudelft.idm.oclc.org/doi/abs/10.1145/3678717.3691306" target="_blank" class="paper-link">↗ Paper</a>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10383101" target="_blank" class="paper-link">↗ Paper</a>
       </div>
-      <h1 class="detail-title">GreenSpot: Improving Public Transport with GIS-Based AR and Cluster-GCN Recommendation</h1>
-      <p class="detail-authors">Shih-Yu Lai, <strong>Tzu-Hsin Hsieh</strong>, Sing-Kai Ling, Pei-Chi Tsai, Chao-Chun Kung, Hsun-Ping Hsieh</p>
+      <h1 class="detail-title">TMSR: Tiny Multi-path CNNs for Super Resolution</h1>
+      <p class="detail-authors">Chia-Hung Liu, <strong>Tzu-Hsin Hsieh</strong>, Kuan-Yu Huang, Pei-Yin Chen</p>
     </div>
   </section>
 
@@ -59,43 +59,44 @@
 
       <div class="detail-main">
         <div class="detail-thumb">
-          <img src="../images/pub-sigspatial2024-fig.png" alt="GreenSpot paper figure" />
+          <img src="../images/pub-tmsr-fig.png" alt="TMSR CNN architecture" />
         </div>
 
         <div class="detail-section">
           <h2>Abstract</h2>
-          <p>GreenSpot combines GIS-based augmented reality with a Cluster-GCN recommendation model to help commuters discover and choose greener public transport options. The system overlays real-time transit suggestions onto the physical city environment via a mobile AR interface, while the backend models spatial dependencies between bus stops, bike-share stations, and pedestrian flow patterns using graph convolutional networks.</p>
-          <p>Published at ACM SIGSPATIAL 2024, GreenSpot demonstrates how spatial graph learning can be coupled with on-site AR to create actionable, place-aware mobility recommendations.</p>
+          <p>TMSR (Tiny Multi-path Super Resolution) proposes a lightweight convolutional neural network architecture for single-image super resolution, optimized for hardware-constrained edge devices. The multi-path design extracts features at multiple receptive field scales simultaneously, fusing them through a channel-attention aggregation module to reconstruct high-frequency image detail efficiently.</p>
+          <p>Experiments on benchmark SR datasets demonstrate competitive PSNR/SSIM scores with significantly fewer parameters than baseline models, making TMSR suitable for deployment on embedded systems and mobile hardware.</p>
         </div>
 
         <div class="detail-section">
           <h2>Key Contributions</h2>
           <ul class="detail-list">
-            <li>Cluster-GCN architecture for scalable spatial recommendation over city-scale transit graphs.</li>
-            <li>GIS data pipeline integrating OpenStreetMap, GTFS transit feeds, and weather sensors.</li>
-            <li>Mobile AR interface (iOS / ARKit) that overlays route suggestions at physical bus stops.</li>
-            <li>Field evaluation with commuters in Tainan City, Taiwan.</li>
+            <li>Multi-path convolutional feature extraction with parallel branches at 3×3, 5×5, and dilated kernels.</li>
+            <li>Channel-attention module for adaptive feature fusion across paths.</li>
+            <li>Pixel-shuffle upsampling for sub-pixel reconstruction without checkerboard artifacts.</li>
+            <li>Achieves competitive PSNR on DIV2K, Set5, and Set14 at &lt;200K parameters.</li>
           </ul>
         </div>
 
         <div class="detail-section">
           <h2>Technologies</h2>
           <div class="detail-tags">
-            <span>Graph CNN</span><span>GIS</span><span>ARKit</span><span>iOS</span>
-            <span>Public Transit</span><span>OpenStreetMap</span>
-            <span>Python</span><span>ACM SIGSPATIAL 2024</span>
+            <span>PyTorch</span><span>CNN</span><span>Super Resolution</span>
+            <span>Channel Attention</span><span>Edge AI</span>
+            <span>Computer Vision</span><span>IEEE ECICE 2023</span>
           </div>
         </div>
 
         <div class="detail-section bibtex-section">
           <h2>BibTeX</h2>
           <div class="bibtex-wrap">
-            <pre class="bibtex-block">@inproceedings{lai2024greenspot,
-  title={GreenSpot: Improving Public Transport with GIS-Based AR and Cluster-GCN Recommendation},
-  author={Lai, Shih-Yu and Hsieh, Tzu-Hsin and Ling, Sing-Kai and Tsai, Pei-Chi and Kung, Chao-Chun and Hsieh, Hsun-Ping},
-  booktitle={Proceedings of the 32nd ACM International Conference on Advances in Geographic Information Systems},
-  pages={689--692},
-  year={2024}
+            <pre class="bibtex-block">@inproceedings{liu2023tmsr,
+  title={TMSR: Tiny Multi-path CNNs for Super Resolution},
+  author={Liu, Chia-Hung and Hsieh, Tzu-Hsin and Huang, Kuan-Yu and Chen, Pei-Yin},
+  booktitle={2023 IEEE 5th Eurasia Conference on IOT, Communication and Engineering (ECICE)},
+  pages={829--833},
+  year={2023},
+  organization={IEEE}
 }</pre>
             <button class="bibtex-copy" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})">Copy</button>
           </div>
@@ -106,13 +107,13 @@
         <div class="sidebar-card">
           <h3>Publication Info</h3>
           <dl>
-            <dt>Venue</dt><dd>ACM SIGSPATIAL 2024</dd>
-            <dt>Year</dt><dd>2024</dd>
+            <dt>Venue</dt><dd>IEEE ECICE 2023</dd>
+            <dt>Year</dt><dd>2023</dd>
           </dl>
         </div>
         <div class="sidebar-card">
           <h3>Related</h3>
-          <a href="m3.html" class="related-link">M3 (SIGSPATIAL 2025)</a>
+          <a href="greenspot.html" class="related-link">GreenSpot (Spatial AI)</a>
         </div>
       </aside>
 

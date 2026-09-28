@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CityScope AR · Celine Hsieh</title>
+  <title>Non-Euclidean VR Space · Celine Hsieh</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="detail.css" />
+  <link rel="stylesheet" href="../detail/detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
   <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
@@ -44,11 +44,11 @@
     <div class="container">
       <a href="../index.html#projects" class="back-link mono">← Back</a>
       <div class="detail-meta-row">
-        <span class="venue-tag caadria">MIT UROP · 2023</span>
-        <span class="detail-cat-tag">AR / Spatial AI</span>
+        <span class="venue-tag" style="background:rgba(123,97,255,0.15);border-color:rgba(123,97,255,0.5);color:#b9abff;">VR / Spatial Cognition</span>
+        <span class="detail-cat-tag">XR Systems</span>
       </div>
-      <h1 class="detail-title">CityScope AR: Real-Time 3D Weather Visualization on Physical Island Models</h1>
-      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong> — City Science Lab @ Taipei, MIT UROP Program</p>
+      <h1 class="detail-title">Non-Euclidean VR Space: Impossible Geometry and Scale Perception in Extended Reality</h1>
+      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong></p>
     </div>
   </section>
 
@@ -57,31 +57,31 @@
 
       <div class="detail-main">
         <div class="detail-thumb">
-          <img src="../images/proj-cityscope.png" alt="CityScope AR" />
+          <img src="../images/proj-noneuclidean.png" alt="Non-Euclidean VR Space" />
         </div>
 
         <div class="detail-section">
           <h2>Project Overview</h2>
-          <p>CityScope AR is an iOS augmented reality application developed during the MIT UROP program at City Science Lab @ Taipei (2023). The app overlays real-time 3D weather data from Taiwan's Central Weather Bureau directly onto a physical island tabletop model, enabling researchers and city planners to experience climate simulations in an intuitive spatial context.</p>
-          <p>Spatial registration is achieved through AprilTag marker detection and ARKit plane detection, maintaining centimeter-level accuracy between the virtual weather layers and the physical model surface.</p>
+          <p>This project explores how non-Euclidean geometry — spaces that violate the usual rules of distance, angle, and dimensionality — can be constructed in VR to study spatial cognition, sense of presence, and navigation behavior. Inspired by architectural theory and impossible-space games (e.g., Portal, Antichamber), the environment uses connected portal-rooms and deliberate scale mismatches to produce experiences that feel physically impossible but remain navigable.</p>
+          <p>Developed in Unity / C# for HTC VIVE, the project formed part of early explorations into how XR can redefine spatial experience beyond physical constraints — a theme that carries into current research on XR-based spatial AI.</p>
         </div>
 
         <div class="detail-section">
           <h2>Key Features</h2>
           <ul class="detail-list">
-            <li>AprilTag-based spatial anchoring with ARKit plane detection for robust model registration.</li>
-            <li>Real-time weather data pipeline from Taiwan Central Weather Bureau (CWB) API — wind speed, precipitation, temperature.</li>
-            <li>3D volumetric wind vectors and rain particle systems rendered at correct geographic scale.</li>
-            <li>Multi-layer toggle UI for switching between weather variables and time frames.</li>
+            <li>Portal-based room transitions: walking through an archway teleports the user to a spatially disconnected room rendered at a different scale.</li>
+            <li>Scale mismatch: rooms appear small from outside but are vast when entered, exploiting VR's decoupling of visual and physical scale.</li>
+            <li>Impossible corridors: hallways that loop back on themselves without the user perceiving the loop.</li>
+            <li>Staircase Illusion: a continuous spiral staircase that always ascends yet returns to the starting floor.</li>
           </ul>
         </div>
 
         <div class="detail-section">
           <h2>Technologies</h2>
           <div class="detail-tags">
-            <span>iOS / Swift</span><span>ARKit</span><span>AprilTag</span>
-            <span>SceneKit</span><span>Weather API</span><span>MIT UROP</span>
-            <span>City Science Lab</span>
+            <span>Unity / C#</span><span>HTC VIVE</span><span>SteamVR SDK</span>
+            <span>Non-Euclidean Geometry</span><span>Spatial Cognition</span>
+            <span>XR Design</span>
           </div>
         </div>
       </div>
@@ -90,16 +90,15 @@
         <div class="sidebar-card">
           <h3>Project Info</h3>
           <dl>
-            <dt>Program</dt><dd>MIT UROP</dd>
-            <dt>Lab</dt><dd>City Science Lab @ Taipei</dd>
-            <dt>Year</dt><dd>Feb – Jun 2023</dd>
-            <dt>Platform</dt><dd>iOS (iPhone / iPad)</dd>
+            <dt>Year</dt><dd>2021</dd>
+            <dt>Platform</dt><dd>HTC VIVE (PC VR)</dd>
+            <dt>Engine</dt><dd>Unity 2021 / C#</dd>
           </dl>
         </div>
         <div class="sidebar-card">
           <h3>Related</h3>
-          <a href="urbansight.html" class="related-link">UrbanSight (MR)</a>
           <a href="ghost-instructors.html" class="related-link">Ghost Instructors (VR)</a>
+          <a href="urbansight.html" class="related-link">UrbanSight (MR)</a>
         </div>
       </aside>
 
