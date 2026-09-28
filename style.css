@@ -396,6 +396,25 @@ section:nth-child(even) { background: var(--bg2); }
   padding: 0.2rem 0.5rem; border-radius: 0.2rem;
 }
 
+/* ===== NEWS ===== */
+.news-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
+.news-item {
+  display: flex; gap: 2rem; align-items: baseline;
+  padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  min-width: 80px; color: var(--accent); font-size: 0.80rem;
+  opacity: 0.85; white-space: nowrap; flex-shrink: 0;
+}
+.news-text { font-size: 0.90rem; color: var(--text-muted); line-height: 1.6; }
+.news-text em { color: var(--text); font-style: normal; font-weight: 500; }
+.news-text a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+.news-text a:hover { color: var(--accent); }
+@media (max-width: 600px) {
+  .news-item { flex-direction: column; gap: 0.2rem; }
+}
+
 /* ===== PUBLICATIONS ===== */
 .pub-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
 .pub-header .section-title { margin-bottom: 0; }
