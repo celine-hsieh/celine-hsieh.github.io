@@ -5,7 +5,7 @@
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   const hero = document.getElementById('hero');
-  const getW = () => hero.offsetWidth;
+  const getW = () => Math.round(window.innerWidth * 0.92);
   const getH = () => hero.offsetHeight;
   renderer.setSize(getW(), getH());
 
@@ -72,7 +72,7 @@
     size: 0.15,
     vertexColors: true,
     transparent: true,
-    opacity: 0.18,
+    opacity: 0.25,
     sizeAttenuation: true,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
@@ -158,7 +158,7 @@
     renderer.domElement.style.opacity = fade;
 
     // Particle opacity: brighter in light mode
-    material.opacity = document.body.classList.contains('light-mode') ? 0.35 : 0.18;
+    material.opacity = document.body.classList.contains('light-mode') ? 0.4 : 0.25;
 
     renderer.render(scene, camera);
   }
