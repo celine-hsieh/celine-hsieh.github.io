@@ -601,7 +601,6 @@ section:nth-child(even) { background: var(--bg2); }
   transition: all 0.2s;
 }
 .award-item:last-child { border-bottom: none; }
-.award-item:hover { padding-left: 0.5rem; }
 .award-year { color: var(--accent); min-width: 50px; font-size: 0.78rem; }
 .award-body { flex: 1; }
 .award-title { font-weight: 600; font-size: 0.95rem; }
