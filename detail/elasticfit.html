@@ -123,8 +123,8 @@
     /* Section headings */
     .pp-section { margin-bottom: 2.5rem; }
     .pp-section-title {
-      font-size: 1.25rem; font-weight: 700; color: var(--text);
-      margin-bottom: 1rem; letter-spacing: -0.01em;
+      font-size: 1.5rem; font-weight: 800; color: var(--text);
+      margin-bottom: 1.1rem; letter-spacing: -0.02em;
     }
 
     /* Abstract */
@@ -253,34 +253,6 @@
 
     <hr class="pp-divider" />
 
-    <!-- Results at a Glance -->
-    <div class="pp-section">
-      <h2 class="pp-section-title">Results at a Glance</h2>
-      <div class="pp-metrics">
-        <div class="pp-metric">
-          <div class="pp-metric-num">69.7%</div>
-          <div class="pp-metric-label">Spatial Relation Success</div>
-        </div>
-        <div class="pp-metric">
-          <div class="pp-metric-num">91.7%</div>
-          <div class="pp-metric-label">Support Success Rate</div>
-        </div>
-        <div class="pp-metric">
-          <div class="pp-metric-num">91.7%</div>
-          <div class="pp-metric-label">Collision-Free Rate</div>
-        </div>
-        <div class="pp-metric">
-          <div class="pp-metric-num">4.18<span style="font-size:1.1rem;font-weight:600">/5</span></div>
-          <div class="pp-metric-label">Plausibility Score</div>
-        </div>
-      </div>
-      <p style="font-size:0.88rem;color:var(--text-light);margin-top:0.75rem;">
-        Evaluated on 120 tasks across ReplicaCAD and Replica datasets. Improves spatial relation success from 50.8% → 69.7% and support success from 48.3% → 91.7% over the strongest baseline (LayoutGPT).
-      </p>
-    </div>
-
-    <hr class="pp-divider" />
-
     <!-- Method -->
     <div class="pp-section">
       <h2 class="pp-section-title">Method</h2>
@@ -305,9 +277,31 @@
 
     <hr class="pp-divider" />
 
-    <!-- Qualitative Results -->
+    <!-- Results -->
     <div class="pp-section">
-      <h2 class="pp-section-title">Qualitative Results</h2>
+      <h2 class="pp-section-title">Results</h2>
+
+      <div class="pp-metrics">
+        <div class="pp-metric">
+          <div class="pp-metric-num">69.7%</div>
+          <div class="pp-metric-label">Spatial Relation Success</div>
+        </div>
+        <div class="pp-metric">
+          <div class="pp-metric-num">91.7%</div>
+          <div class="pp-metric-label">Support Success Rate</div>
+        </div>
+        <div class="pp-metric">
+          <div class="pp-metric-num">91.7%</div>
+          <div class="pp-metric-label">Collision-Free Rate</div>
+        </div>
+        <div class="pp-metric">
+          <div class="pp-metric-num">4.18<span style="font-size:1.1rem;font-weight:600">/5</span></div>
+          <div class="pp-metric-label">Plausibility Score</div>
+        </div>
+      </div>
+      <p style="font-size:0.88rem;color:var(--text-light);margin-top:0.75rem;margin-bottom:2rem;">
+        Evaluated on 120 tasks across ReplicaCAD and Replica datasets. Improves spatial relation success from 50.8% → 69.7% and support success from 48.3% → 91.7% over the strongest baseline (LayoutGPT).
+      </p>
 
       <figure class="pp-figure">
         <img src="../images/elasticfit/fig4.png" alt="Qualitative comparison" />
