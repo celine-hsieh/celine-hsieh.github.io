@@ -4,99 +4,125 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ElasticFit: Fit-Aware 3D Object Insertion via VLM Reasoning and Generative Adaptation</title>
-  <link rel="stylesheet" href="../style.css?v=29" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
-  <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
-  <script>
-    // Force light/white mode on this page regardless of user preference
-    document.documentElement.classList.add('light-mode');
-    document.body && document.body.classList.add('light-mode');
-    document.documentElement.style.colorScheme = 'light';
-    document.getElementById('themeColorDark').media  = 'not all';
-    document.getElementById('themeColorLight').media = '(max-width: 99999px)';
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ===== PROJECT PAGE — always light ===== */
-    html, body {
-      --bg: #F5F7FA !important;
-      --bg2: #ECEEF2 !important;
-      --bg3: #E2E5EB !important;
-      --accent: #007AB8 !important;
-      --accent2: #5B46D6 !important;
-      --text: #0D1929 !important;
-      --text-muted: #4A5568 !important;
-      --border: rgba(0,100,150,0.20) !important;
-      --card-bg: rgba(255,255,255,0.92) !important;
-      background: #F5F7FA !important;
-      color: #0D1929 !important;
-    }
-    #navbar { display: none !important; }
-    .proj-page { max-width: 860px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Header */
-    .pp-back {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      color: var(--text-muted); text-decoration: none;
-      font-family: var(--mono); font-size: 0.80rem; letter-spacing: 0.1em;
-      margin-bottom: 2.5rem; transition: color 0.2s;
+    :root {
+      --text:       #1a1a2e;
+      --text-muted: #555e6e;
+      --text-light: #8892a4;
+      --accent:     #1a6fb5;
+      --accent2:    #5B46D6;
+      --border:     #e0e4ea;
+      --bg:         #ffffff;
+      --bg2:        #f7f8fa;
+      --mono: 'JetBrains Mono', monospace;
     }
-    .pp-back:hover { color: var(--accent); }
 
-    .pp-venue-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; align-items: center; }
-    .venue-tag { font-family: var(--mono); font-size: 0.80rem; font-weight: 600;
-      padding: 0.3rem 0.75rem; border-radius: 0.3rem; border: 1px solid;
-      text-transform: uppercase; letter-spacing: 0.08em; }
-    .venue-tag.neurips { color: #00C878; background: rgba(0,200,120,0.15); border-color: rgba(0,200,120,0.45); }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── BACK LINK ── */
+    .page-back {
+      display: block;
+      max-width: 960px; margin: 0 auto;
+      padding: 1.75rem 2rem 0;
+    }
+    .page-back a {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.82rem; color: var(--text-light); text-decoration: none;
+      font-family: var(--mono); letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .page-back a:hover { color: var(--accent); }
+
+    /* ── HERO HEADER ── */
+    .pp-header {
+      max-width: 860px; margin: 0 auto;
+      padding: 2.5rem 2rem 0;
+      text-align: center;
+    }
+
+    .pp-venue-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0.55rem; margin-bottom: 1.5rem;
+    }
+    .venue-tag {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+      padding: 0.28rem 0.75rem; border-radius: 0.3rem; border: 1px solid;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .venue-tag.neurips { color: #00a864; background: rgba(0,168,100,0.08); border-color: rgba(0,168,100,0.35); }
     .pub-badge {
-      font-family: var(--mono); font-size: 0.80rem;
-      color: var(--accent2); background: rgba(123,97,255,0.1);
-      border: 1px solid rgba(123,97,255,0.3);
-      padding: 0.25rem 0.65rem; border-radius: 2rem;
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--accent2); background: rgba(91,70,214,0.07);
+      border: 1px solid rgba(91,70,214,0.25);
+      padding: 0.28rem 0.7rem; border-radius: 2rem;
     }
 
     .pp-title {
-      font-size: clamp(1.6rem, 4vw, 2.6rem);
-      font-weight: 700; line-height: 1.2; letter-spacing: -0.02em;
-      margin-bottom: 0.9rem;
-    }
-    .pp-authors {
-      font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.4rem;
-    }
-    .pp-authors strong { color: var(--text); }
-    .pp-affil {
-      font-size: 0.80rem; color: var(--text-muted); margin-bottom: 1.8rem;
-      font-family: var(--mono); opacity: 0.75;
+      font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+      font-weight: 800; line-height: 1.18; letter-spacing: -0.025em;
+      color: var(--text); margin-bottom: 1.5rem;
     }
 
-    /* Link buttons */
-    .pp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; }
+    .pp-authors {
+      font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text-muted);
+    }
+    .pp-authors a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .pp-authors a:hover { text-decoration: underline; }
+    .pp-authors strong { color: var(--text); font-weight: 700; }
+    .pp-authors .author-sep { margin: 0 0.15rem; opacity: 0.4; }
+
+    .pp-affil {
+      font-size: 0.88rem; color: var(--text-light);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── LINK BUTTONS ── */
+    .pp-links {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0.6rem; margin-bottom: 3rem;
+    }
     .pp-btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      font-family: var(--mono); font-size: 0.80rem; font-weight: 600;
-      padding: 0.45rem 1.1rem; border-radius: 2rem;
-      text-decoration: none; letter-spacing: 0.05em;
-      transition: all 0.2s; border: 1px solid;
+      font-family: var(--mono); font-size: 0.78rem; font-weight: 600;
+      padding: 0.5rem 1.25rem; border-radius: 2rem;
+      text-decoration: none; letter-spacing: 0.04em;
+      transition: all 0.2s; border: 1.5px solid;
     }
     .pp-btn-primary {
-      color: #050A14; background: var(--accent); border-color: var(--accent);
+      color: #fff; background: var(--accent); border-color: var(--accent);
     }
-    .pp-btn-primary:hover { opacity: 0.85; }
+    .pp-btn-primary:hover { background: #1460a0; border-color: #1460a0; }
     .pp-btn-ghost {
       color: var(--text-muted); background: transparent; border-color: var(--border);
     }
     .pp-btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── MAIN CONTENT ── */
+    .pp-body {
+      max-width: 860px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
     /* Teaser */
     .pp-teaser {
-      width: 100%; border-radius: 0.75rem; overflow: hidden;
-      border: 1px solid var(--border); margin-bottom: 3rem;
-      background: var(--bg3);
+      width: 100%; border-radius: 0.6rem; overflow: hidden;
+      border: 1px solid var(--border); margin-bottom: 3.5rem;
+      background: var(--bg2);
     }
     .pp-teaser img { width: 100%; display: block; }
     .pp-caption {
-      font-size: 0.80rem; color: var(--text-muted); line-height: 1.65;
-      padding: 0.85rem 1.1rem; border-top: 1px solid var(--border);
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.7;
+      padding: 0.9rem 1.2rem; border-top: 1px solid var(--border);
       font-style: italic;
     }
     .pp-caption b { color: var(--text); font-style: normal; }
@@ -104,90 +130,93 @@
     /* Divider */
     .pp-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
-    /* Sections */
-    .pp-section { margin-bottom: 3rem; }
+    /* Section headings */
+    .pp-section { margin-bottom: 2.5rem; }
     .pp-section-title {
-      font-family: var(--mono); font-size: 0.80rem; font-weight: 600;
-      color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em;
-      margin-bottom: 1rem; opacity: 0.9;
+      font-size: 1.25rem; font-weight: 700; color: var(--text);
+      margin-bottom: 1rem; letter-spacing: -0.01em;
     }
+
+    /* Abstract */
     .pp-abstract {
-      font-size: 0.97rem; color: var(--text-muted); line-height: 1.85;
+      font-size: 1rem; color: var(--text-muted); line-height: 1.85;
     }
-    .pp-abstract em { color: var(--accent); font-style: normal; font-weight: 500; }
+    .pp-abstract + .pp-abstract { margin-top: 1rem; }
+    .pp-abstract em { color: var(--accent); font-style: normal; font-weight: 600; }
 
     /* Figures */
     .pp-figure { margin: 2rem 0; }
     .pp-figure img {
-      width: 100%; border-radius: 0.6rem;
+      width: 100%; border-radius: 0.5rem;
       border: 1px solid var(--border); display: block;
     }
     .pp-figure figcaption {
-      font-size: 0.80rem; color: var(--text-muted); line-height: 1.65;
-      margin-top: 0.75rem;
+      font-size: 0.83rem; color: var(--text-muted); line-height: 1.7;
+      margin-top: 0.8rem; text-align: left;
     }
     .pp-figure figcaption b { color: var(--text); }
 
-    /* Results grid */
-    .pp-results-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;
-    }
-    @media (max-width: 600px) { .pp-results-grid { grid-template-columns: 1fr; } }
-
-    /* Highlight numbers */
+    /* Metrics */
     .pp-metrics {
       display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;
     }
     .pp-metric {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 0.6rem; padding: 1rem 1.4rem; text-align: center; flex: 1; min-width: 120px;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 0.6rem; padding: 1.1rem 1.5rem;
+      text-align: center; flex: 1; min-width: 130px;
     }
     .pp-metric-num {
-      font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1;
+      font-size: 1.75rem; font-weight: 800; color: var(--accent); line-height: 1;
     }
-    .pp-metric-label { font-size: 0.80rem; color: var(--text-muted); margin-top: 0.3rem; font-family: var(--mono); }
+    .pp-metric-label {
+      font-size: 0.75rem; color: var(--text-light);
+      margin-top: 0.35rem; font-family: var(--mono);
+    }
 
     /* BibTeX */
+    .pp-bibtex-wrap { position: relative; }
     .pp-bibtex {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 0.6rem; padding: 1.25rem;
-      font-family: var(--mono); font-size: 0.80rem; line-height: 1.7;
-      color: var(--text-muted); overflow-x: auto; white-space: pre;
-      position: relative;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 0.5rem; padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+      font-family: var(--mono); font-size: 0.78rem; line-height: 1.75;
+      color: var(--text-muted); overflow-x: auto; white-space: pre; margin: 0;
     }
     .pp-copy-btn {
-      position: absolute; top: 0.6rem; right: 0.6rem;
+      position: absolute; top: 0.65rem; right: 0.65rem;
       background: var(--bg); border: 1px solid var(--border);
-      color: var(--text-muted); font-family: var(--mono); font-size: 0.80rem;
-      padding: 0.2rem 0.6rem; border-radius: 0.35rem; cursor: pointer; transition: all 0.2s;
+      color: var(--text-light); font-family: var(--mono); font-size: 0.72rem;
+      padding: 0.22rem 0.6rem; border-radius: 0.35rem;
+      cursor: pointer; transition: all 0.2s;
     }
     .pp-copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Footer */
+    .pp-footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.78rem; color: var(--text-light);
+    }
+    .pp-footer a { color: var(--text-light); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .pp-title { font-size: 1.55rem; }
+      .pp-metrics { flex-direction: column; }
+      .pp-header, .pp-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
   </style>
 </head>
 <body>
 
-  <nav id="navbar">
-    <a href="../index.html" class="nav-logo" style="text-decoration:none;font-family:var(--mono);font-size:1.1rem;font-weight:600;color:var(--text);letter-spacing:0.1em;">C<span style="color:var(--accent)">.</span></a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#publications">Publications</a></li>
-        <li><a href="../index.html#projects">Projects</a></li>
-        <li><a href="../index.html#awards">Awards</a></li>
-        <li><a href="../ar.html" class="nav-ar">⬡ AR</a></li>
-      </ul>
-      <button class="theme-toggle" id="themeToggle">
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-  </nav>
+  <!-- Back link -->
+  <div class="page-back">
+    <a href="../index.html#publications">← Back</a>
+  </div>
 
-  <main class="proj-page">
+  <!-- Header: title, authors, links -->
+  <header class="pp-header">
 
-    <a href="../index.html#publications" class="pp-back">← Back to Publications</a>
-
-    <!-- Venue + Title + Authors -->
     <div class="pp-venue-row">
       <span class="venue-tag neurips">NeurIPS 2026</span>
       <span class="pub-badge">1st Author · Full Paper</span>
@@ -195,44 +224,49 @@
 
     <h1 class="pp-title">ElasticFit: Fit-Aware 3D Object Insertion via VLM Reasoning and Generative Adaptation</h1>
 
-    <p class="pp-authors"><strong>Tzu-Hsin Hsieh</strong>, Ricardo Marroquim</p>
-    <p class="pp-affil">Computer Graphics and Visualization Group · TU Delft</p>
+    <p class="pp-authors">
+      <strong>Tzu-Hsin Hsieh</strong><span class="author-sep">,</span>
+      Ricardo Marroquim
+    </p>
+    <p class="pp-affil">Computer Graphics and Visualization Group, TU Delft</p>
 
-    <!-- Link buttons -->
     <div class="pp-links">
       <a href="#" class="pp-btn pp-btn-primary">📄 Paper</a>
       <a href="#bibtex" class="pp-btn pp-btn-ghost">BibTeX</a>
     </div>
 
-    <!-- Teaser figure -->
+  </header>
+
+  <!-- Body -->
+  <main class="pp-body">
+
+    <!-- Teaser -->
     <div class="pp-teaser">
       <img src="../images/elasticfit/fig1.png" alt="ElasticFit teaser" />
       <p class="pp-caption">
-        <b>Figure 1.</b> ElasticFit inserts generated 3D objects into pre-existing scenes from natural-language instructions. It combines VLM reasoning, generative adaptation, and geometry- and physics-aware refinement. Red text highlights key constraints.
+        <b>Figure 1.</b> ElasticFit inserts generated 3D objects into pre-existing scenes from natural-language instructions. It combines VLM reasoning, generative adaptation, and geometry- and physics-aware refinement. Red text highlights key fitting constraints.
       </p>
     </div>
 
-    <hr class="pp-divider" />
-
     <!-- Abstract -->
     <div class="pp-section">
-      <div class="pp-section-title">Abstract</div>
+      <h2 class="pp-section-title">Abstract</h2>
       <p class="pp-abstract">
         Inserting objects into existing 3D scenes requires more than selecting a plausible location: the inserted object must also <em>fit</em> local geometry while preserving semantic intent and physical plausibility. Although recent Vision-Language Models (VLMs) and generative models enable semantic reasoning and visual content creation, they offer limited 3D grounding and geometric control when an inserted object must fit into constrained local spaces.
       </p>
-      <p class="pp-abstract" style="margin-top:1rem;">
+      <p class="pp-abstract">
         We introduce <em>ElasticFit</em>, a VLM-guided framework for fit-aware object insertion centered on a novel scene-grounded representation. Given a language instruction and rendered scene observations, ElasticFit infers <em>structured fitting cues</em> that specify where the object should be grounded, what volume it should occupy, how it should be oriented, and its adaptation mode — rigid placement, uniform scaling, or elastic deformation. These cues convert high-level VLM reasoning into explicit 3D constraints that condition object generation and guide downstream geometric fitting.
       </p>
-      <p class="pp-abstract" style="margin-top:1rem;">
+      <p class="pp-abstract">
         ElasticFit then generates a scene-conditioned object prior, reconstructs it in 3D, and refines the mesh through mode-specific fitting while enforcing collision avoidance, contact consistency, and physical grounding.
       </p>
     </div>
 
     <hr class="pp-divider" />
 
-    <!-- Key Results -->
+    <!-- Results at a Glance -->
     <div class="pp-section">
-      <div class="pp-section-title">Results at a Glance</div>
+      <h2 class="pp-section-title">Results at a Glance</h2>
       <div class="pp-metrics">
         <div class="pp-metric">
           <div class="pp-metric-num">69.7%</div>
@@ -247,11 +281,11 @@
           <div class="pp-metric-label">Collision-Free Rate</div>
         </div>
         <div class="pp-metric">
-          <div class="pp-metric-num">4.18/5</div>
+          <div class="pp-metric-num">4.18<span style="font-size:1.1rem;font-weight:600">/5</span></div>
           <div class="pp-metric-label">Plausibility Score</div>
         </div>
       </div>
-      <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;">
+      <p style="font-size:0.88rem;color:var(--text-light);margin-top:0.75rem;">
         Evaluated on 120 tasks across ReplicaCAD and Replica datasets. Improves spatial relation success from 50.8% → 69.7% and support success from 48.3% → 91.7% over the strongest baseline (LayoutGPT).
       </p>
     </div>
@@ -260,7 +294,7 @@
 
     <!-- Method -->
     <div class="pp-section">
-      <div class="pp-section-title">Method</div>
+      <h2 class="pp-section-title">Method</h2>
       <p class="pp-abstract">
         ElasticFit operates in three stages: <em>semantic-spatial grounding</em> via Set-of-Mark VLM queries, <em>scene-conditioned object generation</em> using SDXL + TRELLIS, and <em>geometry- and physics-aware fitting</em> with three adaptation modes refined by PyBullet simulation.
       </p>
@@ -282,9 +316,10 @@
 
     <hr class="pp-divider" />
 
-    <!-- Results -->
+    <!-- Qualitative Results -->
     <div class="pp-section">
-      <div class="pp-section-title">Qualitative Results</div>
+      <h2 class="pp-section-title">Qualitative Results</h2>
+
       <figure class="pp-figure">
         <img src="../images/elasticfit/fig4.png" alt="Qualitative comparison" />
         <figcaption>
@@ -292,14 +327,14 @@
         </figcaption>
       </figure>
 
-      <figure class="pp-figure" style="margin-top:1.5rem;">
+      <figure class="pp-figure">
         <img src="../images/elasticfit/fig5.png" alt="Common placement set results" />
         <figcaption>
           <b>Figure 5.</b> Additional qualitative results on the Common Placement Set, showing ElasticFit's ability to handle diverse object types, spatial relations, and support geometries across ReplicaCAD and Replica scenes.
         </figcaption>
       </figure>
 
-      <figure class="pp-figure" style="margin-top:1.5rem;">
+      <figure class="pp-figure">
         <img src="../images/elasticfit/fig6.png" alt="Fit-critical results" />
         <figcaption>
           <b>Figure 6.</b> Qualitative results on the Fit-Critical Set, demonstrating ElasticFit's elastic deformation mode for objects that must conform to constrained spatial envelopes.
@@ -311,8 +346,8 @@
 
     <!-- BibTeX -->
     <div class="pp-section" id="bibtex">
-      <div class="pp-section-title">BibTeX</div>
-      <div style="position:relative;">
+      <h2 class="pp-section-title">BibTeX</h2>
+      <div class="pp-bibtex-wrap">
         <pre class="pp-bibtex">@inproceedings{hsieh2026elasticfit,
   title     = {ElasticFit: Fit-Aware 3D Object Insertion via
                VLM Reasoning and Generative Adaptation},
@@ -330,6 +365,9 @@
 
   </main>
 
-  <script src="../main.js?v=3"></script>
+  <footer class="pp-footer">
+    <a href="../index.html">← celine-hsieh.github.io</a>
+  </footer>
+
 </body>
 </html>
