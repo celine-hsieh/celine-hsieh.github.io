@@ -466,6 +466,7 @@ section:nth-child(even) { background: var(--bg2); }
 .venue-tag.caadria { background: rgba(0,212,255,0.1); color: #60B8D4; border: 1px solid rgba(0,212,255,0.2); }
 .venue-tag.sigspatial { background: rgba(123,97,255,0.1); color: #9B8BFF; border: 1px solid rgba(123,97,255,0.2); }
 .venue-tag.ieee { background: rgba(255,180,0,0.1); color: #FFB400; border: 1px solid rgba(255,180,0,0.2); }
+.venue-tag.neurips { background: rgba(0,200,120,0.1); color: #00C878; border: 1px solid rgba(0,200,120,0.25); }
 .pub-badge {
   font-family: var(--mono); font-size: 0.62rem;
   color: var(--accent2); background: rgba(123,97,255,0.1);
