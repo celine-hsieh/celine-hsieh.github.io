@@ -160,6 +160,7 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
   position: relative; height: 50vh; min-height: 320px;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
+  padding-bottom: 3rem;
 }
 #hero-canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;

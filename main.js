@@ -72,7 +72,7 @@
     size: 0.15,
     vertexColors: true,
     transparent: true,
-    opacity: 0.25,
+    opacity: 0.3,
     sizeAttenuation: true,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
@@ -158,7 +158,7 @@
     renderer.domElement.style.opacity = fade;
 
     // Particle opacity: brighter in light mode
-    material.opacity = document.body.classList.contains('light-mode') ? 0.4 : 0.25;
+    material.opacity = document.body.classList.contains('light-mode') ? 0.45 : 0.3;
 
     renderer.render(scene, camera);
   }
