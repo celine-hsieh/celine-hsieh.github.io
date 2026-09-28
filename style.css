@@ -698,24 +698,44 @@ footer {
   }
 }
 @media (max-width: 600px) {
+  /* Navbar */
   #navbar { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .pub-abstract { display: none; }
-  .hero-cta { flex-direction: column; }
-  .research-grid { grid-template-columns: 1fr; }
-  .exp-edu-layout { grid-template-columns: 1fr !important; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-card { flex-direction: row; align-items: center; text-align: left; gap: 1rem; padding: 1rem 1.2rem; }
-  .about-stats-row { grid-template-columns: repeat(2, 1fr); }
-  .exp-edu-layout { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .hero-badges { gap: 0.4rem; }
-  .badge { font-size: 0.80rem; padding: 0.25rem 0.6rem; }
-  .hero-sub { padding: 0 0.5rem; font-size: 0.95rem; white-space: nowrap; }
+
+  /* Hero — vertical stack like Lukas */
+  .hero-content { flex-direction: column; align-items: center; text-align: center; gap: 1.25rem; }
+  .hero-text { text-align: center; }
+  .hero-links { justify-content: center; }
+  #hero-avatar { width: 140px; height: 140px; }
+  .hero-sub { white-space: normal; font-size: 0.9rem; }
+  .hero-chinese { font-size: 1.1rem; }
+
+  /* General */
   .container { padding: 0 1.25rem; }
   section { padding: 2rem 0; }
+
+  /* About */
+  .about-grid { display: block; }
   .about-photo-wrap { display: none; }
+
+  /* Experience */
+  .exp-edu-layout { grid-template-columns: 1fr !important; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
+  .exp-left { display: flex; flex-direction: row; align-items: center; gap: 0.75rem; }
+  .exp-line { display: none; }
+
+  /* Research */
+  .research-grid { grid-template-columns: 1fr; }
+
+  /* Publications */
+  .pub-abstract { display: none; }
+  .pub-header { flex-direction: column; align-items: flex-start; }
+
+  /* Projects */
+  .projects-grid-new { grid-template-columns: 1fr; }
+  .proj-card-new.large-left { grid-column: span 1; flex-direction: column; }
+  .proj-card-new.large-left .proj-img-wrap { width: 100%; height: 180px; }
 }
 
 /* Prevent any child from breaking out of viewport */
