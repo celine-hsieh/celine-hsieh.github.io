@@ -157,73 +157,44 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
 
 /* ===== HERO ===== */
 #hero {
-  position: relative; height: 50vh; min-height: 320px;
-  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  display: flex; align-items: center;
   overflow: hidden;
-  padding-bottom: 3rem;
+  padding: 5rem 0 2rem;
 }
 #hero-canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
   max-width: 100vw;
 }
 .hero-content {
-  position: relative; z-index: 2; text-align: center;
-  display: flex; flex-direction: column; align-items: center; gap: 1rem;
-}
-.hero-tag {
-  color: var(--accent); font-size: 0.78rem; letter-spacing: 0.15em;
-  text-transform: uppercase; opacity: 0.9;
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(0,212,255,0.3);
-  border-radius: 2rem;
-  background: rgba(0,212,255,0.05);
-}
-.hero-content h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
-}
-.hero-chinese {
-  font-size: 3.5rem; color: var(--text-muted); letter-spacing: 0.25em;
-  font-weight: 300; margin-top: -0.5rem; margin-bottom: 0.25rem;
-}
-.hero-sub {
-  font-size: 1.1rem; color: var(--text-muted); letter-spacing: 0.05em;
-  font-weight: 400;
-}
-.hero-badges {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
-}
-.badge {
-  font-family: var(--mono); font-size: 0.72rem;
-  color: var(--text); border: 1px solid rgba(123,97,255,0.55);
-  background: rgba(123,97,255,0.18);
-  padding: 0.3rem 0.85rem; border-radius: 0.25rem;
-  text-shadow: 0 0 10px rgba(123,97,255,0.6);
-}
-.badge:nth-child(odd) {
-  border-color: rgba(0,212,255,0.5); background: rgba(0,212,255,0.12);
-  text-shadow: 0 0 10px rgba(0,212,255,0.5);
-}
-
-/* Hero profile photo */
-.hero-profile {
-  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 2;
+  display: flex; flex-direction: row; align-items: center; gap: 2.5rem;
 }
 #hero-avatar {
-  width: 88px; height: 88px; border-radius: 50%; object-fit: cover;
-  border: 2px solid rgba(0,212,255,0.7);
-  box-shadow: 0 0 24px rgba(0,212,255,0.25), 0 0 60px rgba(0,212,255,0.1);
+  width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(0,212,255,0.55);
+  box-shadow: 0 0 32px rgba(0,212,255,0.18), 0 0 80px rgba(0,212,255,0.07);
+  flex-shrink: 0;
 }
-.hero-avatar-fallback {
-  width: 88px; height: 88px; border-radius: 50%;
-  background: var(--bg3); border: 2px solid rgba(0,212,255,0.7);
-  display: none; align-items: center; justify-content: center;
-  font-size: 1.5rem; font-weight: 700; color: var(--accent);
-  box-shadow: 0 0 24px rgba(0,212,255,0.25);
+.hero-text {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.hero-content h1 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+}
+.hero-chinese {
+  font-size: 1.1rem; color: var(--text-muted); letter-spacing: 0.35em;
+  font-weight: 300;
+}
+.hero-sub {
+  font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.04em;
+  font-weight: 400;
 }
 .hero-links {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
-  margin-top: 0.75rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-top: 0.4rem;
 }
 .hero-cta { display: flex; gap: 1rem; margin-top: 0.5rem; }
 .btn-primary {
