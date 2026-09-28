@@ -263,7 +263,7 @@ section:nth-child(even) { background: var(--bg2); }
 @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 
 .about-grid {
-  display: grid; grid-template-columns: 1fr 320px; gap: 5rem; align-items: start;
+  display: block;
 }
 .about-text { width: 100%; }
 .about-text h2 {
