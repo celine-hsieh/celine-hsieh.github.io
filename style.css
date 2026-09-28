@@ -157,7 +157,7 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
 
 /* ===== HERO ===== */
 #hero {
-  position: relative; height: 100vh; min-height: 580px;
+  position: relative; height: 50vh; min-height: 320px;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
