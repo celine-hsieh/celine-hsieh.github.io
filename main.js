@@ -168,29 +168,6 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// ===== SCROLL REVEAL =====
-const revealEls = document.querySelectorAll(
-  '.research-card, .pub-item, .project-card, .award-item, .stat-card, .contact-card'
-);
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = entry.target.style.transform
-        ? entry.target.style.transform.replace('translateY(30px)', 'translateY(0)')
-        : 'translateY(0)';
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-revealEls.forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = `opacity 0.35s ease ${i * 0.04}s, transform 0.35s ease ${i * 0.04}s`;
-  observer.observe(el);
-});
 
 // ===== ABOUT TABS =====
 const atabs = document.querySelectorAll('.atab');
