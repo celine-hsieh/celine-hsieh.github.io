@@ -262,7 +262,7 @@ section:nth-child(even) { background: var(--bg2); }
   text-transform: uppercase; margin-bottom: 1.2rem; opacity: 0.8;
 }
 .section-title {
-  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   font-weight: 700; letter-spacing: -0.02em;
   margin-bottom: 3rem; line-height: 1.2;
 }
@@ -278,7 +278,7 @@ section:nth-child(even) { background: var(--bg2); }
   border-bottom: 1px solid var(--border);
 }
 .atab {
-  font-family: var(--font); font-size: clamp(0.9rem, 2vw, 1.4rem); font-weight: 700;
+  font-family: var(--font); font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700;
   color: var(--text-muted); background: transparent; border: none;
   padding: 0.75rem 1.5rem; cursor: pointer;
   border-bottom: 2px solid transparent; margin-bottom: -1px;
