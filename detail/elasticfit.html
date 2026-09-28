@@ -312,9 +312,20 @@
     <!-- BibTeX -->
     <div class="pp-section" id="bibtex">
       <div class="pp-section-title">BibTeX</div>
-      <p style="font-size:0.85rem;color:var(--text-muted);font-family:var(--mono);padding:1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:0.6rem;">
-        Coming soon — paper under NeurIPS 2026 review.
-      </p>
+      <div style="position:relative;">
+        <pre class="pp-bibtex">@inproceedings{hsieh2026elasticfit,
+  title     = {ElasticFit: Fit-Aware 3D Object Insertion via
+               VLM Reasoning and Generative Adaptation},
+  author    = {Hsieh, Tzu-Hsin and Marroquim, Ricardo},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026}
+}</pre>
+        <button class="pp-copy-btn" onclick="
+          navigator.clipboard.writeText(this.previousElementSibling.textContent);
+          this.textContent='Copied!';
+          setTimeout(()=>this.textContent='Copy',1500);
+        ">Copy</button>
+      </div>
     </div>
 
   </main>
