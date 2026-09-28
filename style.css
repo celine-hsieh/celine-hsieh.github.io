@@ -185,8 +185,8 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
   font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
 }
 .hero-chinese {
-  font-size: 1.1rem; color: var(--text-muted); letter-spacing: 0.35em;
-  font-weight: 300;
+  font-size: 1.4rem; color: var(--text); letter-spacing: 0.35em;
+  font-weight: 400; opacity: 0.75;
 }
 .hero-sub {
   font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.04em;
