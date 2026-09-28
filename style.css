@@ -503,6 +503,7 @@ section:nth-child(even) { background: var(--bg2); }
 .pub-authors { color: var(--text-muted); font-size: 0.8rem; }
 .pub-authors strong { color: var(--accent); font-weight: 600; }
 .pub-abstract { color: var(--text-muted); font-size: 0.82rem; line-height: 1.65; }
+.pub-list.hide-abstracts .pub-abstract { display: none; }
 .pub-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.2rem; }
 .pub-tags span {
   font-family: var(--mono); font-size: 0.6rem;

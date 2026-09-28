@@ -187,6 +187,9 @@ atabs.forEach(tab => {
 // ===== PUBLICATION FILTER =====
 const filterBtns = document.querySelectorAll('.pf-btn');
 const pubItems = document.querySelectorAll('.pub-item[data-cat]');
+const pubList = document.querySelector('.pub-list');
+// Start on "all" — hide abstracts initially
+if (pubList) pubList.classList.add('hide-abstracts');
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
@@ -199,6 +202,8 @@ filterBtns.forEach(btn => {
         item.classList.add('pub-hidden');
       }
     });
+    // Show abstracts only when a specific filter is active
+    if (pubList) pubList.classList.toggle('hide-abstracts', filter === 'all');
   });
 });
 
