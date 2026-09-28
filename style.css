@@ -223,7 +223,7 @@ body.light-mode .award-item, body.light-mode .contact-card { background: white; 
 }
 .hero-links {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
-  margin-top: -0.5rem;
+  margin-top: 0.75rem;
 }
 .hero-cta { display: flex; gap: 1rem; margin-top: 0.5rem; }
 .btn-primary {
