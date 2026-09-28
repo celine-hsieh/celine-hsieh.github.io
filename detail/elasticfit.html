@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ElasticFit · Celine Hsieh</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="detail.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta id="themeColorDark" name="theme-color" content="#050A14" media="(max-width: 99999px)">
   <meta id="themeColorLight" name="theme-color" content="#EBF0F6" media="not all">
@@ -19,110 +18,299 @@
       document.getElementById('themeColorLight').media = light ? '(max-width: 99999px)' : 'not all';
     })();
   </script>
+  <style>
+    /* ===== PROJECT PAGE ===== */
+    .proj-page { max-width: 860px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+
+    /* Header */
+    .pp-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--text-muted); text-decoration: none;
+      font-family: var(--mono); font-size: 0.80rem; letter-spacing: 0.1em;
+      margin-bottom: 2.5rem; transition: color 0.2s;
+    }
+    .pp-back:hover { color: var(--accent); }
+
+    .pp-venue-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; align-items: center; }
+    .venue-tag { font-family: var(--mono); font-size: 0.80rem; font-weight: 600;
+      padding: 0.3rem 0.75rem; border-radius: 0.3rem; border: 1px solid;
+      text-transform: uppercase; letter-spacing: 0.08em; }
+    .venue-tag.neurips { color: #00C878; background: rgba(0,200,120,0.15); border-color: rgba(0,200,120,0.45); }
+    .pub-badge {
+      font-family: var(--mono); font-size: 0.80rem;
+      color: var(--accent2); background: rgba(123,97,255,0.1);
+      border: 1px solid rgba(123,97,255,0.3);
+      padding: 0.25rem 0.65rem; border-radius: 2rem;
+    }
+
+    .pp-title {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 700; line-height: 1.2; letter-spacing: -0.02em;
+      margin-bottom: 0.9rem;
+    }
+    .pp-authors {
+      font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.4rem;
+    }
+    .pp-authors strong { color: var(--text); }
+    .pp-affil {
+      font-size: 0.80rem; color: var(--text-muted); margin-bottom: 1.8rem;
+      font-family: var(--mono); opacity: 0.75;
+    }
+
+    /* Link buttons */
+    .pp-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; }
+    .pp-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--mono); font-size: 0.80rem; font-weight: 600;
+      padding: 0.45rem 1.1rem; border-radius: 2rem;
+      text-decoration: none; letter-spacing: 0.05em;
+      transition: all 0.2s; border: 1px solid;
+    }
+    .pp-btn-primary {
+      color: #050A14; background: var(--accent); border-color: var(--accent);
+    }
+    .pp-btn-primary:hover { opacity: 0.85; }
+    .pp-btn-ghost {
+      color: var(--text-muted); background: transparent; border-color: var(--border);
+    }
+    .pp-btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Teaser */
+    .pp-teaser {
+      width: 100%; border-radius: 0.75rem; overflow: hidden;
+      border: 1px solid var(--border); margin-bottom: 3rem;
+      background: var(--bg3);
+    }
+    .pp-teaser img { width: 100%; display: block; }
+    .pp-caption {
+      font-size: 0.80rem; color: var(--text-muted); line-height: 1.65;
+      padding: 0.85rem 1.1rem; border-top: 1px solid var(--border);
+      font-style: italic;
+    }
+    .pp-caption b { color: var(--text); font-style: normal; }
+
+    /* Divider */
+    .pp-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+    /* Sections */
+    .pp-section { margin-bottom: 3rem; }
+    .pp-section-title {
+      font-family: var(--mono); font-size: 0.80rem; font-weight: 600;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em;
+      margin-bottom: 1rem; opacity: 0.9;
+    }
+    .pp-abstract {
+      font-size: 0.97rem; color: var(--text-muted); line-height: 1.85;
+    }
+    .pp-abstract em { color: var(--accent); font-style: normal; font-weight: 500; }
+
+    /* Figures */
+    .pp-figure { margin: 2rem 0; }
+    .pp-figure img {
+      width: 100%; border-radius: 0.6rem;
+      border: 1px solid var(--border); display: block;
+    }
+    .pp-figure figcaption {
+      font-size: 0.80rem; color: var(--text-muted); line-height: 1.65;
+      margin-top: 0.75rem;
+    }
+    .pp-figure figcaption b { color: var(--text); }
+
+    /* Results grid */
+    .pp-results-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;
+    }
+    @media (max-width: 600px) { .pp-results-grid { grid-template-columns: 1fr; } }
+
+    /* Highlight numbers */
+    .pp-metrics {
+      display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;
+    }
+    .pp-metric {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 0.6rem; padding: 1rem 1.4rem; text-align: center; flex: 1; min-width: 120px;
+    }
+    .pp-metric-num {
+      font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1;
+    }
+    .pp-metric-label { font-size: 0.80rem; color: var(--text-muted); margin-top: 0.3rem; font-family: var(--mono); }
+
+    /* BibTeX */
+    .pp-bibtex {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 0.6rem; padding: 1.25rem;
+      font-family: var(--mono); font-size: 0.80rem; line-height: 1.7;
+      color: var(--text-muted); overflow-x: auto; white-space: pre;
+      position: relative;
+    }
+    .pp-copy-btn {
+      position: absolute; top: 0.6rem; right: 0.6rem;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text-muted); font-family: var(--mono); font-size: 0.80rem;
+      padding: 0.2rem 0.6rem; border-radius: 0.35rem; cursor: pointer; transition: all 0.2s;
+    }
+    .pp-copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
 </head>
 <body>
 
   <nav id="navbar">
-    <a href="../index.html" class="nav-logo">C<span class="accent">.</span></a>
+    <a href="../index.html" class="nav-logo" style="text-decoration:none;font-family:var(--mono);font-size:1.1rem;font-weight:600;color:var(--text);letter-spacing:0.1em;">C<span style="color:var(--accent)">.</span></a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="../index.html#about">About</a></li>
         <li><a href="../index.html#publications">Publications</a></li>
         <li><a href="../index.html#projects">Projects</a></li>
         <li><a href="../index.html#awards">Awards</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
         <li><a href="../ar.html" class="nav-ar">⬡ AR</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle">
-      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
     </div>
   </nav>
 
-  <section class="detail-hero">
-    <div class="container">
-      <a href="../index.html#projects" class="back-link mono">← Back</a>
-      <div class="detail-meta-row">
-        <span class="venue-tag neurips">NeurIPS 2026</span>
-        <span class="pub-badge">1st Author · Full Paper</span>
-        <span class="detail-cat-tag">3D / Generative AI</span>
-      </div>
-      <h1 class="detail-title">ElasticFit: Fit-Aware 3D Object Insertion via VLM Reasoning and Generative Adaptation</h1>
-      <p class="detail-authors"><strong>Tzu-Hsin Hsieh</strong>, Ricardo Marroquim</p>
+  <main class="proj-page">
+
+    <a href="../index.html#publications" class="pp-back">← Back to Publications</a>
+
+    <!-- Venue + Title + Authors -->
+    <div class="pp-venue-row">
+      <span class="venue-tag neurips">NeurIPS 2026</span>
+      <span class="pub-badge">1st Author · Full Paper</span>
     </div>
-  </section>
 
-  <section class="detail-body">
-    <div class="container detail-layout">
+    <h1 class="pp-title">ElasticFit: Fit-Aware 3D Object Insertion via VLM Reasoning and Generative Adaptation</h1>
 
-      <div class="detail-main">
+    <p class="pp-authors"><strong>Tzu-Hsin Hsieh</strong>, Ricardo Marroquim</p>
+    <p class="pp-affil">Computer Graphics and Visualization Group · TU Delft</p>
 
-        <div class="detail-thumb">
-          <img src="../images/proj-elasticfit.png" alt="ElasticFit teaser" />
-        </div>
-
-        <div class="detail-section">
-          <h2>Abstract</h2>
-          <p>Inserting a 3D object into an existing scene requires more than placement — it demands that the object <em>fits</em> the available space while obeying geometric and physical constraints. We present <em>ElasticFit</em>, a framework for fit-aware 3D object insertion that combines VLM-based semantic-spatial reasoning with scene-conditioned object generation and geometry- and physics-aware fitting.</p>
-          <p>Given a natural-language instruction and an existing 3D scene, ElasticFit infers structured fitting cues that encode the target region, object orientation, support constraints, and adaptation behavior. A scene-conditioned object prior is generated and then refined through rigid, uniform, or elastic adaptation to achieve stable, physically plausible insertion. Evaluated on ReplicaCAD and Replica datasets, ElasticFit improves spatial relation success from 50.8% to 69.7% and support success from 48.3% to 91.7% over strong VLM-guided baselines.</p>
-        </div>
-
-        <div class="detail-section">
-          <h2>Key Contributions</h2>
-          <ul class="detail-list">
-            <li>A unified <em>structured fitting cue</em> representation G that jointly encodes placement geometry, adaptation strategy, and semantic conditioning — bridging high-level VLM reasoning with downstream geometric realization.</li>
-            <li>A three-stage pipeline: semantic-spatial grounding via Set-of-Mark VLM queries, scene-conditioned 2D-to-3D object prior generation using SDXL + TRELLIS, and geometry- and physics-aware fitting with three adaptation modes (rigid, uniform, elastic).</li>
-            <li>A physics-guided settling stage using PyBullet that refines object pose under gravity and contact dynamics for physically realistic final insertions.</li>
-            <li>Evaluation across two benchmark datasets (ReplicaCAD and Replica) on 120 tasks spanning common placement and fit-critical conditions, outperforming LayoutGPT, Holodeck, and LayoutVLM across all key metrics.</li>
-          </ul>
-        </div>
-
-        <div class="detail-section">
-          <h2>System Design</h2>
-          <p>ElasticFit operates in three stages. <em>Stage 1: Semantic-Spatial Grounding</em> renders the scene from the user's viewpoint and constructs an XYZ buffer and semantic ID buffer. A Set-of-Mark image is generated and a VLM is queried to predict a structured JSON specifying the anchor object, target placement pixel, optional orientation cues, snapping behavior, and adaptation mode. These image-space predictions are lifted into a 3D ghost box that encodes the maximum fitting volume.</p>
-          <p><em>Stage 2: Scene-Conditioned Object Prior</em> uses the ghost box dimensions to define a canvas for an SDXL-style text-to-image generator, producing a 2D object image with proportions biased toward the target fitting region. The image is then lifted into an initial 3D mesh using TRELLIS, providing a close-fit initialization for downstream refinement.</p>
-          <p><em>Stage 3: Geometry- and Physics-Aware Fitting</em> refines the prior using one of three adaptation modes. <em>Rigid</em> mode preserves object geometry and solves for a collision-aware pose. <em>Uniform</em> mode optimizes a single global scale factor to fit the target region while preserving aspect ratio. <em>Elastic</em> mode applies anisotropic scaling along the box-local axes, enabling non-uniform adaptation to constrained or gap-like spaces. After mode-specific fitting, PyBullet physics simulation settles the object naturally on the supporting scene geometry.</p>
-        </div>
-
-        <div class="detail-section">
-          <h2>Results</h2>
-          <p>On the Common Placement Set (60 tasks), ElasticFit achieves <em>69.7% SRS</em>, 91.7% CFR, and <em>91.7% SupR</em> — improving over the best baseline (LayoutGPT: 50.8% SRS, 48.3% SupR). On the Fit-Critical Set (60 tasks including pose-and-contact and gap-fitting conditions), ElasticFit achieves 60.8% SRS, 71.7% CFR, and 83.3% SupR with a contextual plausibility score of 4.57/5. Cross-dataset validation on ReplicaCAD and Replica confirms robust performance across both clean CAD-like and noisy reconstructed scenes.</p>
-        </div>
-
-        <div class="detail-section">
-          <h2>Technologies</h2>
-          <div class="detail-tags">
-            <span>VLM Reasoning</span><span>SDXL</span><span>TRELLIS</span>
-            <span>PyBullet</span><span>Set-of-Mark</span><span>3D Object Insertion</span>
-            <span>ReplicaCAD</span><span>Replica</span><span>Generative AI</span>
-            <span>Spatial AI</span>
-          </div>
-        </div>
-
-      </div>
-
-      <aside class="detail-sidebar">
-        <div class="sidebar-card">
-          <h3>Publication Info</h3>
-          <dl>
-            <dt>Venue</dt><dd>NeurIPS 2026 — Full Paper</dd>
-            <dt>Status</dt><dd>Accepted</dd>
-            <dt>Role</dt><dd>First Author</dd>
-            <dt>Year</dt><dd>2026</dd>
-            <dt>Topic</dt><dd>3D Generative AI / Spatial Reasoning</dd>
-          </dl>
-        </div>
-        <div class="sidebar-card">
-          <h3>Related</h3>
-          <a href="ghost-instructors.html" class="related-link">Ghost Instructors (VR)</a>
-          <a href="urbansight.html" class="related-link">UrbanSight (XR)</a>
-        </div>
-      </aside>
-
+    <!-- Link buttons -->
+    <div class="pp-links">
+      <a href="#" class="pp-btn pp-btn-primary">📄 Paper</a>
+      <a href="#bibtex" class="pp-btn pp-btn-ghost">BibTeX</a>
     </div>
-  </section>
 
-  <script src="../main.js"></script>
+    <!-- Teaser figure -->
+    <div class="pp-teaser">
+      <img src="../images/elasticfit/page01.png" alt="ElasticFit teaser" />
+      <p class="pp-caption">
+        <b>Figure 1.</b> ElasticFit inserts generated 3D objects into pre-existing scenes from natural-language instructions. It combines VLM reasoning, generative adaptation, and geometry- and physics-aware refinement. Red text highlights key constraints.
+      </p>
+    </div>
+
+    <hr class="pp-divider" />
+
+    <!-- Abstract -->
+    <div class="pp-section">
+      <div class="pp-section-title">Abstract</div>
+      <p class="pp-abstract">
+        Inserting objects into existing 3D scenes requires more than selecting a plausible location: the inserted object must also <em>fit</em> local geometry while preserving semantic intent and physical plausibility. Although recent Vision-Language Models (VLMs) and generative models enable semantic reasoning and visual content creation, they offer limited 3D grounding and geometric control when an inserted object must fit into constrained local spaces.
+      </p>
+      <p class="pp-abstract" style="margin-top:1rem;">
+        We introduce <em>ElasticFit</em>, a VLM-guided framework for fit-aware object insertion centered on a novel scene-grounded representation. Given a language instruction and rendered scene observations, ElasticFit infers <em>structured fitting cues</em> that specify where the object should be grounded, what volume it should occupy, how it should be oriented, and its adaptation mode — rigid placement, uniform scaling, or elastic deformation. These cues convert high-level VLM reasoning into explicit 3D constraints that condition object generation and guide downstream geometric fitting.
+      </p>
+      <p class="pp-abstract" style="margin-top:1rem;">
+        ElasticFit then generates a scene-conditioned object prior, reconstructs it in 3D, and refines the mesh through mode-specific fitting while enforcing collision avoidance, contact consistency, and physical grounding.
+      </p>
+    </div>
+
+    <hr class="pp-divider" />
+
+    <!-- Key Results -->
+    <div class="pp-section">
+      <div class="pp-section-title">Results at a Glance</div>
+      <div class="pp-metrics">
+        <div class="pp-metric">
+          <div class="pp-metric-num">69.7%</div>
+          <div class="pp-metric-label">Spatial Relation Success</div>
+        </div>
+        <div class="pp-metric">
+          <div class="pp-metric-num">91.7%</div>
+          <div class="pp-metric-label">Support Success Rate</div>
+        </div>
+        <div class="pp-metric">
+          <div class="pp-metric-num">91.7%</div>
+          <div class="pp-metric-label">Collision-Free Rate</div>
+        </div>
+        <div class="pp-metric">
+          <div class="pp-metric-num">4.18/5</div>
+          <div class="pp-metric-label">Plausibility Score</div>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;">
+        Evaluated on 120 tasks across ReplicaCAD and Replica datasets. Improves spatial relation success from 50.8% → 69.7% and support success from 48.3% → 91.7% over the strongest baseline (LayoutGPT).
+      </p>
+    </div>
+
+    <hr class="pp-divider" />
+
+    <!-- Method -->
+    <div class="pp-section">
+      <div class="pp-section-title">Method</div>
+      <p class="pp-abstract">
+        ElasticFit operates in three stages: <em>semantic-spatial grounding</em> via Set-of-Mark VLM queries, <em>scene-conditioned object generation</em> using SDXL + TRELLIS, and <em>geometry- and physics-aware fitting</em> with three adaptation modes refined by PyBullet simulation.
+      </p>
+
+      <figure class="pp-figure" style="margin-top:1.75rem;">
+        <img src="../images/elasticfit/page04.png" alt="ElasticFit pipeline overview" />
+        <figcaption>
+          <b>Figure 2.</b> Overview of ElasticFit. Given a user instruction and an existing 3D scene, ElasticFit infers structured fitting cues G encoding the target region, orientation, constraints, and adaptation behavior. Stage 1 performs semantic-spatial grounding, Stage 2 generates a scene-conditioned object prior, and Stage 3 refines through geometry- and physics-aware fitting.
+        </figcaption>
+      </figure>
+
+      <figure class="pp-figure">
+        <img src="../images/elasticfit/page05.png" alt="Three adaptation modes" />
+        <figcaption>
+          <b>Figure 3.</b> Visualization of the three adaptation modes in Stage 3. Each row shows the target ghost box, generated initial object, and fitted result. <b>Rigid</b> mode preserves geometry; <b>Uniform</b> mode applies isotropic scaling; <b>Elastic</b> mode applies anisotropic deformation to fit constrained spaces.
+        </figcaption>
+      </figure>
+    </div>
+
+    <hr class="pp-divider" />
+
+    <!-- Results -->
+    <div class="pp-section">
+      <div class="pp-section-title">Qualitative Results</div>
+      <figure class="pp-figure">
+        <img src="../images/elasticfit/page08.png" alt="Qualitative comparison" />
+        <figcaption>
+          <b>Figure 4.</b> Qualitative comparison on representative Common Placement Set tasks. Baselines often struggle with physical refinement, ambiguous references, and irregular support geometry. ElasticFit produces more spatially and physically plausible placements.
+        </figcaption>
+      </figure>
+
+      <figure class="pp-figure" style="margin-top:1.5rem;">
+        <img src="../images/elasticfit/page07.png" alt="Quantitative results tables" />
+        <figcaption>
+          <b>Tables 1 & 2.</b> Cross-dataset validation and baseline comparison. ElasticFit consistently outperforms LayoutGPT, Holodeck, and LayoutVLM across all key metrics on both ReplicaCAD and Replica datasets.
+        </figcaption>
+      </figure>
+    </div>
+
+    <hr class="pp-divider" />
+
+    <!-- BibTeX -->
+    <div class="pp-section" id="bibtex">
+      <div class="pp-section-title">BibTeX</div>
+      <div style="position:relative;">
+        <pre class="pp-bibtex">@inproceedings{hsieh2026elasticfit,
+  title     = {ElasticFit: Fit-Aware 3D Object Insertion via
+               VLM Reasoning and Generative Adaptation},
+  author    = {Hsieh, Tzu-Hsin and Marroquim, Ricardo},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026}
+}</pre>
+        <button class="pp-copy-btn" onclick="
+          navigator.clipboard.writeText(this.previousElementSibling.textContent);
+          this.textContent='Copied!';
+          setTimeout(()=>this.textContent='Copy',1500);
+        ">Copy</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="../main.js?v=3"></script>
 </body>
 </html>
