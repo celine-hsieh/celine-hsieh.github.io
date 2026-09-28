@@ -235,7 +235,7 @@ section:nth-child(even) { background: var(--bg2); }
 .section-title {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 3rem; line-height: 1.2;
+  margin-bottom: 1.5rem; line-height: 1.2;
 }
 
 /* ===== ABOUT ===== */
@@ -245,7 +245,7 @@ section:nth-child(even) { background: var(--bg2); }
 
 /* Tabs */
 .about-tabs {
-  display: flex; gap: 0; margin-bottom: 2.5rem;
+  display: flex; gap: 0; margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--border);
 }
 .atab {
@@ -416,7 +416,7 @@ section:nth-child(even) { background: var(--bg2); }
 }
 
 /* ===== PUBLICATIONS ===== */
-.pub-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.pub-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
 .pub-header .section-title { margin-bottom: 0; }
 .pub-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .pf-btn {
