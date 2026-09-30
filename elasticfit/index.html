@@ -196,7 +196,50 @@
     }
     .pp-footer a { color: var(--text-light); }
 
+    /* ===== CHALLENGES SECTION ===== */
+    .pp-challenges {
+      display: flex; flex-direction: column; gap: 3rem;
+      margin: 2rem 0 0;
+    }
+    .pp-challenge {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; align-items: center;
+    }
+    .pp-challenge.reverse { direction: rtl; }
+    .pp-challenge.reverse > * { direction: ltr; }
+    .pp-challenge-text { display: flex; flex-direction: column; gap: 0.75rem; }
+    .pp-challenge-num {
+      width: 2.4rem; height: 2.4rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 800; flex-shrink: 0;
+      margin-bottom: 0.25rem;
+    }
+    .pp-challenge-num.c1 { background: #ddeeff; color: #3a6fc4; }
+    .pp-challenge-num.c2 { background: #d6f5e3; color: #2a9a58; }
+    .pp-challenge-num.c3 { background: #fde8d8; color: #d4632a; }
+    .pp-challenge-title {
+      font-size: 1.25rem; font-weight: 800;
+      color: var(--text); line-height: 1.3;
+    }
+    .pp-challenge-desc {
+      font-size: 1rem; color: var(--text-muted); line-height: 1.75;
+    }
+    .pp-challenge-desc .hl1 { color: #3a6fc4; font-weight: 600; }
+    .pp-challenge-desc .hl2 { color: #2a9a58; font-weight: 600; }
+    .pp-challenge-desc .hl3 { color: #d4632a; font-weight: 600; }
+    .pp-challenge-img {
+      width: 100%; border-radius: 0.75rem; overflow: hidden;
+      background: #f5f7fa; border: 1px solid var(--border);
+    }
+    .pp-challenge-img img {
+      width: 100%; height: auto; display: block;
+    }
+
     /* Responsive */
+    @media (max-width: 760px) {
+      .pp-challenge { grid-template-columns: 1fr; }
+      .pp-challenge.reverse { direction: ltr; }
+    }
     @media (max-width: 600px) {
       .pp-title-main { font-size: 2.4rem; }
       .pp-title-sub  { font-size: 1.1rem; }
@@ -272,6 +315,52 @@
       <p class="pp-abstract">
         ElasticFit then generates a scene-conditioned object prior, reconstructs it in 3D, and refines the mesh through mode-specific fitting while enforcing collision avoidance, contact consistency, and physical grounding.
       </p>
+    </div>
+
+    <hr class="pp-divider" />
+
+    <!-- Challenges -->
+    <div class="pp-section">
+      <h2 class="pp-section-title">3 Challenges of Fit-Aware 3D Insertion</h2>
+      <div class="pp-challenges">
+
+        <!-- Challenge 1: text left, image right -->
+        <div class="pp-challenge">
+          <div class="pp-challenge-text">
+            <div class="pp-challenge-num c1">1</div>
+            <div class="pp-challenge-title">Grounding language in local 3D geometry.</div>
+            <p class="pp-challenge-desc">Understanding <span class="hl1">where</span> the object should be inserted and the spatial constraints of the target region.</p>
+          </div>
+          <div class="pp-challenge-img">
+            <img src="../images/elasticfit/c1.gif" alt="Challenge 1 – Grounding language in local 3D geometry" />
+          </div>
+        </div>
+
+        <!-- Challenge 2: image left, text right -->
+        <div class="pp-challenge reverse">
+          <div class="pp-challenge-text">
+            <div class="pp-challenge-num c2">2</div>
+            <div class="pp-challenge-title">Adapting object geometry to available space.</div>
+            <p class="pp-challenge-desc">The target object may not naturally fit, requiring its geometry—not just its pose—to <span class="hl2">adapt to the local scene</span>.</p>
+          </div>
+          <div class="pp-challenge-img">
+            <img src="../images/elasticfit/c2.gif" alt="Challenge 2 – Adapting object geometry to available space" />
+          </div>
+        </div>
+
+        <!-- Challenge 3: text left, image right -->
+        <div class="pp-challenge">
+          <div class="pp-challenge-text">
+            <div class="pp-challenge-num c3">3</div>
+            <div class="pp-challenge-title">Ensuring physically plausible insertion.</div>
+            <p class="pp-challenge-desc">The adapted object must remain collision-free, properly supported, and <span class="hl3">physically stable</span>.</p>
+          </div>
+          <div class="pp-challenge-img">
+            <img src="../images/elasticfit/c3.gif" alt="Challenge 3 – Ensuring physically plausible insertion" />
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <hr class="pp-divider" />
