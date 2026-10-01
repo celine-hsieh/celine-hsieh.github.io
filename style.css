@@ -70,7 +70,8 @@ body.light-mode .nav-hamburger span { background: var(--text-muted); }
 body.light-mode .hero-tag { background: rgba(0,122,184,0.08); }
 body.light-mode .btn-ghost { background: rgba(0,0,0,0.04); }
 body.light-mode .pub-item, body.light-mode .proj-card-new,
-body.light-mode .award-item, body.light-mode .contact-card { background: white; }
+body.light-mode .contact-card { background: white; }
+body.light-mode .award-item { background: transparent; }
 
 /* ===== NAVBAR ===== */
 #navbar {
