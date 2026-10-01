@@ -614,7 +614,7 @@ section:nth-child(even) { background: var(--bg2); }
 .proj-more-btn.hidden { display: none; }
 
 /* ===== AWARDS ===== */
-#awards { background: transparent !important; }
+#awards { background: var(--bg2) !important; }
 .awards-list { display: flex; flex-direction: column; gap: 0; }
 .award-item {
   display: flex; align-items: center; gap: 1rem;
