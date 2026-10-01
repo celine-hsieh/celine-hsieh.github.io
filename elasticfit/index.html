@@ -293,7 +293,7 @@
 
     <!-- Teaser -->
     <div class="pp-teaser">
-      <img src="../images/elasticfit/fig1.png" alt="ElasticFit teaser" />
+      <img src="../images/elasticfit/fig1.webp" alt="ElasticFit teaser" />
       <p class="pp-caption">
         <b>Figure 1.</b> ElasticFit inserts generated 3D objects into pre-existing scenes from natural-language instructions. It combines VLM reasoning, generative adaptation, and geometry- and physics-aware refinement. Red text highlights key fitting constraints.
       </p>
@@ -332,7 +332,7 @@
             <p class="pp-challenge-desc">Understanding <span class="hl1">where</span> the object should be inserted and the spatial constraints of the target region.</p>
           </div>
           <div class="pp-challenge-img">
-            <img src="../images/elasticfit/c1.gif" alt="Challenge 1 – Grounding language in local 3D geometry" />
+            <img src="../images/elasticfit/c1.webp" alt="Challenge 1 – Grounding language in local 3D geometry" loading="lazy" />
           </div>
         </div>
 
@@ -344,7 +344,7 @@
             <p class="pp-challenge-desc">The target object may not naturally fit, requiring its geometry—not just its pose—to <span class="hl2">adapt to the local scene</span>.</p>
           </div>
           <div class="pp-challenge-img">
-            <img src="../images/elasticfit/c2.gif" alt="Challenge 2 – Adapting object geometry to available space" />
+            <img src="../images/elasticfit/c2.webp" alt="Challenge 2 – Adapting object geometry to available space" loading="lazy" />
           </div>
         </div>
 
@@ -356,7 +356,7 @@
             <p class="pp-challenge-desc">The adapted object must remain collision-free, properly supported, and <span class="hl3">physically stable</span>.</p>
           </div>
           <div class="pp-challenge-img">
-            <img src="../images/elasticfit/c3.gif" alt="Challenge 3 – Ensuring physically plausible insertion" />
+            <img src="../images/elasticfit/c3.webp" alt="Challenge 3 – Ensuring physically plausible insertion" loading="lazy" />
           </div>
         </div>
 
@@ -373,14 +373,14 @@
       </p>
 
       <figure class="pp-figure" style="margin-top:1.75rem;">
-        <img src="../images/elasticfit/fig2.png" alt="ElasticFit pipeline overview" />
+        <img src="../images/elasticfit/fig2.webp" alt="ElasticFit pipeline overview" loading="lazy" />
         <figcaption>
           <b>Figure 2.</b> Overview of ElasticFit. Given a user instruction and an existing 3D scene, ElasticFit infers structured fitting cues G encoding the target region, orientation, constraints, and adaptation behavior. Stage 1 performs semantic-spatial grounding, Stage 2 generates a scene-conditioned object prior, and Stage 3 refines through geometry- and physics-aware fitting.
         </figcaption>
       </figure>
 
       <figure class="pp-figure">
-        <img src="../images/elasticfit/fig3.png" alt="Three adaptation modes" />
+        <img src="../images/elasticfit/fig3.webp" alt="Three adaptation modes" loading="lazy" />
         <figcaption>
           <b>Figure 3.</b> Visualization of the three adaptation modes in Stage 3. Each row shows the target ghost box, generated initial object, and fitted result. <b>Rigid</b> mode preserves geometry; <b>Uniform</b> mode applies isotropic scaling; <b>Elastic</b> mode applies anisotropic deformation to fit constrained spaces.
         </figcaption>
@@ -416,21 +416,21 @@
       </p>
 
       <figure class="pp-figure">
-        <img src="../images/elasticfit/fig4.png" alt="Qualitative comparison" />
+        <img src="../images/elasticfit/fig4.webp" alt="Qualitative comparison" loading="lazy" />
         <figcaption>
           <b>Figure 4.</b> Qualitative comparison on representative Common Placement Set tasks. Baselines often struggle with physical refinement, ambiguous references, and irregular support geometry. ElasticFit produces more spatially and physically plausible placements.
         </figcaption>
       </figure>
 
       <figure class="pp-figure">
-        <img src="../images/elasticfit/fig5.png" alt="Common placement set results" />
+        <img src="../images/elasticfit/fig5.webp" alt="Common placement set results" loading="lazy" />
         <figcaption>
           <b>Figure 5.</b> Additional qualitative results on the Common Placement Set, showing ElasticFit's ability to handle diverse object types, spatial relations, and support geometries across ReplicaCAD and Replica scenes.
         </figcaption>
       </figure>
 
       <figure class="pp-figure">
-        <img src="../images/elasticfit/fig6.png" alt="Fit-critical results" />
+        <img src="../images/elasticfit/fig6.webp" alt="Fit-critical results" loading="lazy" />
         <figcaption>
           <b>Figure 6.</b> Qualitative results on the Fit-Critical Set, demonstrating ElasticFit's elastic deformation mode for objects that must conform to constrained spatial envelopes.
         </figcaption>
